@@ -1,0 +1,30 @@
+spring:
+  mvc:
+    # 정적 파일(static에 들어있는 파일들)을 어떤 URL에서 보내줄 것인지
+    static-path-pattern: /static/**
+  web:
+    resources:
+      # 내가 어떤 경로의 파일을 정적 파일로 전달할 것인지
+      static-locations: classpath:/static,file:media/
+  servlet:
+    multipart:
+      # 개별 파일의 크기 제한
+      max-file-size: 10MB
+      # 전체 총 요청 크기 제한
+      max-request-size: 20MB
+  datasource:
+    url: jdbc:sqlite:db.sqlite
+    driver-class-name: org.sqlite.JDBC
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+jwt:
+  secret: v^K#V@igLXJrBvgY^%gKGy4-GsY51jrun:?C38FY?8h%]t_rd]E@nhL?de3tR>?
