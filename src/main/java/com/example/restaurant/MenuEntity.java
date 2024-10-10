@@ -1,6 +1,5 @@
 package com.example.restaurant;
 
-import com.example.restaurant.restaurant.entity.RestaurantEntity;
 import jakarta.persistence.Entity;
 import lombok.*;
 
@@ -17,6 +16,6 @@ public class MenuEntity extends BaseEntity{
     private String status;  //
 
 
-    private RestaurantEntity restaurant;
+    /*private RestaurantEntity restaurant;*/
 
 }

@@ -1,13 +1,16 @@
-package com.example.restaurant.user;
+package com.example.restaurant.auth.entity;
 
 
 import com.example.restaurant.BaseEntity;
-import com.example.restaurant.OpenRequestEntity;
-import com.example.restaurant.restaurant.entity.RestaurantEntity;
+import com.example.restaurant.requestOpenClose.entity.OpenRequestEntity;
+import com.example.restaurant.restaurants.entity.RestaurantEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
 
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,23 +21,25 @@ public class UserEntity extends BaseEntity {
     @Column(unique = true)
     private String username;
     private String password;
-    @Setter
     @Column(unique = true)
     private String email;
-    @Setter
     @Column(unique = true)
     private String phone;
-    @Setter
+    private String image;
+
     @Builder.Default
     private String role = "ROLE_USER";
 
-    @Setter
-    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "user")
     private RestaurantEntity restaurant;
 
-    @Setter
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private OpenRequestEntity openRequest;
+    private final List<OpenRequestEntity> openRequests = new ArrayList<>();
+    
+/*
+    @ManyToMany(mappedBy = "userLike")
+    private final List<RestaurantEntity> restaurants = new ArrayList<>();
+*/
 
 
 

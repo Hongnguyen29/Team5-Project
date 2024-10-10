@@ -1,7 +1,5 @@
 package com.example.restaurant;
 
-import com.example.restaurant.restaurant.entity.RestaurantEntity;
-import com.example.restaurant.user.UserEntity;
 import jakarta.persistence.Entity;
 import lombok.*;
 
@@ -20,7 +18,7 @@ public class ReviewEntity extends  BaseEntity{
     private LocalDateTime timeCreate;
 
 
-    private UserEntity user;
-    private RestaurantEntity restaurant;
+/*    private UserEntity user;
+    private RestaurantEntity restaurant;*/
 
 }

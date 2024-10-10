@@ -1,6 +1,6 @@
-package com.example.restaurant;
+package com.example.restaurant.requestOpenClose.entity;
 
-import com.example.restaurant.restaurant.entity.RestaurantEntity;
+import com.example.restaurant.BaseEntity;
 import jakarta.persistence.Entity;
 import lombok.*;
 
@@ -15,7 +15,7 @@ public class CloseRequestEntity extends BaseEntity {
     private String status;
 
 
-    private RestaurantEntity restaurant;
+    /*private RestaurantEntity restaurant;*/
 
 
 
