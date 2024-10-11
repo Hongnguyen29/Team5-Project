@@ -53,17 +53,17 @@ public class UserService {
             JwtRequestDto requestDto
     ){
         if (requestDto.getUsername() == null || requestDto.getPassword() == null) {
-            throw new IllegalArgumentException("Username and password must not be null.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Username and password must not be null.");
         }
         UserDetails userDetails;
         try {
             userDetails = customService.loadUserByUsername(requestDto.getUsername());
         } catch (UsernameNotFoundException ex) {
-            throw new IllegalArgumentException("Username not found.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Username not found.");
         }
         if(!passwordEncoder.matches(
                 requestDto.getPassword(), userDetails.getPassword()))
-            throw new IllegalArgumentException( "Incorrect password !");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Incorrect password !");
         String jwt = jwtTokenUtils.generateToken(userDetails);
         JwtResponseDto responseDto = new JwtResponseDto();
         responseDto.setToken(jwt);
