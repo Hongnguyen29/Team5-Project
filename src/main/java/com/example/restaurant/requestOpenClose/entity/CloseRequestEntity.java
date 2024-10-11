@@ -1,9 +1,10 @@
 package com.example.restaurant.requestOpenClose.entity;
 
 import com.example.restaurant.BaseEntity;
+import com.example.restaurant.auth.entity.UserEntity;
+import com.example.restaurant.enumList.RequestStatus;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -16,7 +17,8 @@ import java.time.LocalDateTime;
 @Builder
 public class CloseRequestEntity extends BaseEntity {
     private String reason;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private RequestStatus status;
     //  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
 
@@ -24,10 +26,13 @@ public class CloseRequestEntity extends BaseEntity {
     private LocalDateTime processedAt;
 
 
-    @OneToOne(mappedBy = "closeRequest")
+    @OneToOne
+    @JoinColumn(name = "closeRequest_id")
     private RestaurantEntity restaurant;
 
-
+/*    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserEntity user;*/
 
 
 }

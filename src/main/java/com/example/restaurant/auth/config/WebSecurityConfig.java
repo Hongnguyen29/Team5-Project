@@ -37,7 +37,9 @@ public class WebSecurityConfig {
                             "/auth/updateImage",
                             "/auth/password",
                             "/auth/opens/{openId}",
-                            "/auth/opens/readAll"
+                            "/auth/opens/readAll",
+                            "/auth/close/{closeId}",
+                            "/auth/close/readAll"
 
                     ).authenticated();
 
@@ -52,7 +54,9 @@ public class WebSecurityConfig {
 
                     auth.requestMatchers(
                             "/admin/open/confirm/{openId}",
-                            "/admin/opens/ReadAll"
+                            "/admin/opens/ReadAll",
+                            "/admin/close/confirm/{closeId}",
+                            "/admin/close/ReadAll"
                     ).hasRole("ADMIN");
 
 

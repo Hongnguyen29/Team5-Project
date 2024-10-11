@@ -1,5 +1,6 @@
 package com.example.restaurant.requestOpenClose;
 
+import com.example.restaurant.enumList.RequestStatus;
 import com.example.restaurant.requestOpenClose.dto.CloseViewDto;
 import com.example.restaurant.requestOpenClose.dto.OpenConfirmDto;
 import com.example.restaurant.requestOpenClose.dto.OpenDto;
@@ -67,7 +68,7 @@ public class RequestController {
     @GetMapping("/admin/opens/ReadAll")
     public ResponseEntity<?> adminReadAll(
             @RequestParam(required = false)
-            String status
+            RequestStatus status
     ) {
         try {
             List<OpenViewDto> dtoList = requestService.adminReadAll(status);
@@ -97,6 +98,59 @@ public class RequestController {
         try {
             CloseViewDto closeViewDto = requestService.closeRestaurant(reason);
             return ResponseEntity.ok(closeViewDto);
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred.");
+        }
+    }
+    @PutMapping("/admin/close/confirm/{closeId}")
+    public ResponseEntity<?> closeConfirm(
+            @PathVariable
+            Long closeId
+    ) {
+        try {
+            CloseViewDto closeViewDto = requestService.closeConfirm(closeId);
+            return ResponseEntity.ok(closeViewDto);
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred.");
+        }
+    }
+    @GetMapping("/auth/close/{closeId}")
+    public ResponseEntity<?> readOneClose(
+            @PathVariable
+            Long closeId
+    ) {
+        try {
+            CloseViewDto dto = requestService.readOneClose(closeId);
+            return ResponseEntity.ok(dto);
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred.");
+        }
+    }
+    @GetMapping("/auth/close/readAll")
+    public ResponseEntity<?> UserReadAllClose() {
+        try {
+            List<CloseViewDto> dtoList = requestService.userReadAllClose();
+            return ResponseEntity.ok(dtoList);
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred.");
+        }
+    }
+    @GetMapping("/admin/close/ReadAll")
+    public ResponseEntity<?> adminReadAllClose(
+            @RequestParam(required = false)
+            RequestStatus status
+    ) {
+        try {
+            List<CloseViewDto> dtoList = requestService.adminReadAllClose(status);
+            return ResponseEntity.ok(dtoList);
         } catch (ResponseStatusException e) {
             return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
         } catch (Exception e) {

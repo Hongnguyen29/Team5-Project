@@ -1,0 +1,750 @@
+{
+	"info": {
+		"_postman_id": "fb2ca589-adf7-48b3-b500-3d8c18ab0855",
+		"name": "7_Restaurant_Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37757042"
+	},
+	"item": [
+		{
+			"name": "EnumList",
+			"item": [
+				{
+					"name": "CategoryList-GET/category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth-User",
+			"item": [
+				{
+					"name": "Register-POST/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user1\",\r\n    \"password\":\"123456\",\r\n    \"passwordCheck\":\"123456\",\r\n    \"email\":\"hihi@gmail.com\",\r\n    \"phone\":\"0123456729\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-POST/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user3\",\r\n    \"password\": \"123456\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminLogin-POST/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\": \"123456\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile-GET/auth/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI4MzY0MzAwLCJleHAiOjE3MjgzNzE1MDB9.NP6-F1G1ufvBgrryLfBZDtcBj04MI4ueV4bfUKBbfF0lR7c564jcet-1ISgwwuVE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateInfo-PUT/auth/updateInfo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI4MzY2OTg3LCJleHAiOjE3MjgzNzQxODd9.s_5tNtcPxQ96rss4wxa1M1AdCQEf_jTlQTBnoyLz-G8WJo-uW7MDwCETCqOmZN0M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"hihi@gmail.com\",\r\n    \"phone\":\"01326767333\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/updateInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"updateInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateImg-PUT/updateImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyODU2NzI0OCwiZXhwIjoxNzI4NTc0NDQ4fQ.rfyDv76YBUz79tNzIBSgWxRmTasUDftqzk1ecQYItjknj680GUFZHHeTGbYMtuEG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef733d0-6745-4020-a94a-7966b2f00983"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/updateImage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"updateImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePass-PUT/password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI4MzcxMzEyLCJleHAiOjE3MjgzNzg1MTJ9.oOzcYp_PQN_-IZ97mPwPjyeU1g_BekwaDIBaaKyHcJwEtXozOjWRGqiFJS075l0L",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"654321\",\r\n    \"password\":\"123456\",\r\n    \"passwordCheck\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request-Open/Close",
+			"item": [
+				{
+					"name": "OpenRestaurant-POST/openRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODYyODc3OCwiZXhwIjoxNzI4NjM1OTc4fQ.M_KTrOs7b2rqJow8kBx51_KpCeFaj9RHOGF0uEOWd8QHICvtvRC3319To1rNazWy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nameRestaurant",
+									"value": "nabi",
+									"type": "text"
+								},
+								{
+									"key": "restNumber",
+									"value": "hb13558872424",
+									"type": "text"
+								},
+								{
+									"key": "ownerName",
+									"value": "noje",
+									"type": "text"
+								},
+								{
+									"key": "ownerIdNo",
+									"value": "2478986896",
+									"type": "text"
+								},
+								{
+									"key": "imageRestNumber",
+									"type": "file",
+									"src": "postman-cloud:///1ef733d0-6745-4020-a94a-7966b2f00983"
+								},
+								{
+									"key": "imageId",
+									"type": "file",
+									"src": "postman-cloud:///1ef733a1-6a64-4eb0-8caf-b022b8058380"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/openRequest",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"openRequest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OpenConfirm-PUT/admin/open/confirm/{openId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODYyOTE1NywiZXhwIjoxNzI4NjM2MzU3fQ.9JWFdibZUlfmzDSMua7HS935imf8iP6a7fsXPNv0WN5Yr1_iadcLj38rRmuRZs2S",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"approved\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/open/confirm/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"open",
+								"confirm",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadOneRequest-GET//auth/opens/{openId}\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyODQ4Nzk2MSwiZXhwIjoxNzI4NDk1MTYxfQ.CSHYnR7hfKf1s15SwfmpSlYxuYPs_HpBhkTJDcNw7GQLk0Hr9UEvfR1bEMJOJHzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/opens/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"opens",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminReadAll-GET/admin/opens/ReadAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODQ4MjMzNSwiZXhwIjoxNzI4NDg5NTM1fQ.Xfx_dQLBIHNC4s63zzL7aMdKR9DNHpn-ZRxMihY50XPLFLoFsmf4Rx0zGVl5FGrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "ACCEPTED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/opens/ReadAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"opens",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthReadAll-GET/auth/opens/readAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODQ4MjMzNSwiZXhwIjoxNzI4NDg5NTM1fQ.Xfx_dQLBIHNC4s63zzL7aMdKR9DNHpn-ZRxMihY50XPLFLoFsmf4Rx0zGVl5FGrc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/opens/readAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"opens",
+								"readAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Close-POST/rest/close",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODYyODgwNywiZXhwIjoxNzI4NjM2MDA3fQ.sGuDKYwhCRf6r3y8WHxmVsaSyG4jVs8Ml1uEvgGkCIfnmeWWPpzOhwIdRuxYTVHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "reason",
+									"value": "nônno",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/close",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"close"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CloseConfirm-PUT/admin/close/confirm/{closeId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODYyOTM5NiwiZXhwIjoxNzI4NjM2NTk2fQ.6zx-BcPLT9-etx3RwehKKKGuf7Ej-n-wiLp2-8nEzCH48mPUknryT_AwYihz7UMp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/close/confirm/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"close",
+								"confirm",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CloseReadOne-GET/auth/close/{closeId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODYyOTM5NiwiZXhwIjoxNzI4NjM2NTk2fQ.6zx-BcPLT9-etx3RwehKKKGuf7Ej-n-wiLp2-8nEzCH48mPUknryT_AwYihz7UMp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/close/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"close",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CloseAuthReadAll-GET/auth/close/readAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODYyODgwNywiZXhwIjoxNzI4NjM2MDA3fQ.sGuDKYwhCRf6r3y8WHxmVsaSyG4jVs8Ml1uEvgGkCIfnmeWWPpzOhwIdRuxYTVHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/close/readAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"close",
+								"readAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CloseAdminReadAll-GET/admin/close/ReadAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODYyOTM5NiwiZXhwIjoxNzI4NjM2NTk2fQ.6zx-BcPLT9-etx3RwehKKKGuf7Ej-n-wiLp2-8nEzCH48mPUknryT_AwYihz7UMp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "ACCEPTED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/close/ReadAll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"close",
+								"ReadAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "UpdateInfo-PUT//rest/updateInfo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyODYwOTk5OCwiZXhwIjoxNzI4NjE3MTk4fQ.kElC8XO17ixbd0Qxf7QT4Sj0YMHvIjHHYMKTy7jsMSeLfEoTWJZ6p4dsBr1aickR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": \"123 Main St, Anytown, USA\",\r\n    \"phone\": \"123-456-7890\",\r\n    \"description\": \"A cozy place for family dining.\",\r\n    \"category\": \"PIZZA\",\r\n    \"openTime\": \"10:00\",\r\n    \"closeTime\": \"22:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/updateInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"updateInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateImg-PUT/rest/updateImg",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyODYwOTk5OCwiZXhwIjoxNzI4NjE3MTk4fQ.kElC8XO17ixbd0Qxf7QT4Sj0YMHvIjHHYMKTy7jsMSeLfEoTWJZ6p4dsBr1aickR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1ef733a1-6a64-4eb0-8caf-b022b8058380"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/updateImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"updateImg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

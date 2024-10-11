@@ -4,6 +4,7 @@ import com.example.restaurant.ImageFileUtils;
 import com.example.restaurant.auth.AuthenticationFacade;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
+import com.example.restaurant.enumList.RestStatus;
 import com.example.restaurant.restaurants.dto.RestaurantDto;
 import com.example.restaurant.restaurants.dto.RestaurantViewDto;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
@@ -28,13 +29,13 @@ public class RestaurantService {
     public RestaurantViewDto updateInfo(RestaurantDto dto){
         UserEntity user = facade.extractUser();
         RestaurantEntity restaurant = user.getRestaurant();
-        if(dto.getAddress() != null || !(dto.getAddress().isEmpty())) {
+        if(dto.getAddress() != null && !(dto.getAddress().isEmpty())) {
             restaurant.setAddress(dto.getAddress());
         }
-        if (dto.getPhone() != null || !(dto.getPhone().isEmpty())){
+        if (dto.getPhone() != null && !(dto.getPhone().isEmpty())){
             restaurant.setPhone(dto.getPhone());
         }
-        if(dto.getDescription() != null || !(dto.getDescription().isEmpty())){
+        if(dto.getDescription() != null && !(dto.getDescription().isEmpty())){
             restaurant.setDescription(dto.getDescription());
         }
         if(dto.getCategory() != null){
@@ -46,6 +47,15 @@ public class RestaurantService {
         if(dto.getCloseTime() != null){
             restaurant.setCloseTime(dto.getCloseTime());
         }
+        if(dto.getAddress() != null
+                && dto.getPhone() != null
+                && dto.getDescription() != null
+                && dto.getCategory() != null
+                && dto.getOpenTime() != null
+                && dto.getCloseTime() != null ){
+            restaurant.setStatus(RestStatus.OPEN);
+        }
+
         restRepository.save(restaurant);
 
         return RestaurantViewDto.fromEntity(restaurant);

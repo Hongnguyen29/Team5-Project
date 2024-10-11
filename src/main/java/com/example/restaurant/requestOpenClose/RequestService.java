@@ -4,6 +4,8 @@ import com.example.restaurant.ImageFileUtils;
 import com.example.restaurant.auth.AuthenticationFacade;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
+import com.example.restaurant.enumList.RequestStatus;
+import com.example.restaurant.enumList.RestStatus;
 import com.example.restaurant.requestOpenClose.dto.CloseViewDto;
 import com.example.restaurant.requestOpenClose.dto.OpenConfirmDto;
 import com.example.restaurant.requestOpenClose.dto.OpenDto;
@@ -42,8 +44,7 @@ public class RequestService {
     public OpenViewDto openRestaurant(OpenDto dto){
         UserEntity user = facade.extractUser();
         OpenRequestEntity openRequest = new OpenRequestEntity();
-        if(openRepository.existsByStatusAndUser("PENDING",user)){
-            System.out.println("hihi");
+        if(openRepository.existsByStatusAndUser(RequestStatus.PENDING,user)){
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN,"User already has a pending request.");
         }
@@ -61,7 +62,7 @@ public class RequestService {
         openRequest.setOwnerName(dto.getOwnerName());
         openRequest.setOwnerIdNo(dto.getOwnerIdNo());
         openRequest.setImageId(pathIdNo);
-        openRequest.setStatus("PENDING");
+        openRequest.setStatus(RequestStatus.PENDING);
         openRequest.setCreatedAt(LocalDateTime.now());
         openRequest.setUser(user);
 
@@ -77,12 +78,11 @@ public class RequestService {
         OpenRequestEntity openRequest = openRepository.findById(openId)
                 .orElseThrow(() ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND));
-        if(openRequest.getStatus().equals("ACCEPTED") ||
-                openRequest.getStatus().equals("REJECTED")){
+        if(!(openRequest.getStatus().equals(RequestStatus.PENDING))){
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
         if(dto.isApproved()){
-            openRequest.setStatus("ACCEPTED");
+            openRequest.setStatus(RequestStatus.ACCEPTED);
             openRequest.setProcessedAt(LocalDateTime.now());
             openRepository.save(openRequest);
             log.info(openRequest.getUser().toString());
@@ -92,12 +92,13 @@ public class RequestService {
                     .restNumber(openRequest.getRestNumber())
                     .ownerName(openRequest.getOwnerName())
                     .ownerIdNo(openRequest.getOwnerIdNo())
+                    .status(RestStatus.PREPARING)
                     .user(openRequest.getUser())
                     .build();
             restRepository.save(restaurant);
             log.info(restaurant.getUser().toString());
             UserEntity user = openRequest.getUser();
-            if(openRequest.getStatus().equals("ACCEPTED")){
+            if(openRequest.getStatus().equals(RequestStatus.ACCEPTED)){
                 user.setRole("ROLE_OWNER");
             }
             userRepository.save(user);
@@ -108,7 +109,7 @@ public class RequestService {
                         HttpStatus.BAD_REQUEST,"The reason cannot be left blank");
             }
             openRequest.setReason(dto.getReason());
-            openRequest.setStatus("REJECTED");
+            openRequest.setStatus(RequestStatus.REJECTED);
             openRequest.setProcessedAt(LocalDateTime.now());
 
             openRepository.save(openRequest);
@@ -120,16 +121,15 @@ public class RequestService {
                 .orElseThrow(() ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND));
         UserEntity user = facade.extractUser();
-        System.out.println(user.getUsername());
-        System.out.println(openRequest.getUser().getUsername());
+
 
         if(!(user.getUsername().equals(openRequest.getUser().getUsername()) || user.getUsername().equals("admin"))){
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
-        }//(!(username1.equals("admin") || username1.equals(username2)))
+        }
         return OpenViewDto.fromEntity(openRequest);
     }
 
-    public List<OpenViewDto> adminReadAll(String status){  // "PENDING"  "ACCEPTED"   "REJECTED"
+    public List<OpenViewDto> adminReadAll(RequestStatus status){  // "PENDING"  "ACCEPTED"   "REJECTED"
         List<OpenViewDto> viewDtoList = new ArrayList<>();
         if(status == null){
             List<OpenRequestEntity> openList = openRepository.findAllOrderedByStatusAndCreatedAt();
@@ -160,6 +160,12 @@ public class RequestService {
     public CloseViewDto closeRestaurant(String reason){
         UserEntity user = facade.extractUser();
         RestaurantEntity restaurant = user.getRestaurant();
+        if((restaurant.getStatus().equals(RestStatus.CLOSE))){
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        }
+        if(closeRepository.existsByRestaurant(restaurant)){
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        }
 
         if(reason == null || reason.isEmpty()){
             throw new ResponseStatusException(
@@ -168,7 +174,7 @@ public class RequestService {
         CloseRequestEntity closeRequest = new CloseRequestEntity();
         closeRequest.setReason(reason);
         closeRequest.setCreatedAt(LocalDateTime.now());
-        closeRequest.setStatus("PENDING");
+        closeRequest.setStatus(RequestStatus.PENDING);
         closeRequest.setRestaurant(restaurant);
         closeRepository.save(closeRequest);
 
@@ -180,21 +186,65 @@ public class RequestService {
         CloseRequestEntity closeRequest = closeRepository
                 .findById(closeId).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND));
-        closeRequest.setStatus("ACCEPTED");
+        RestaurantEntity restaurant = closeRequest.getRestaurant();
+        if((restaurant.getStatus().equals(RestStatus.CLOSE))){
+
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        }
+        closeRequest.setStatus(RequestStatus.ACCEPTED);
         closeRequest.setProcessedAt(LocalDateTime.now());
         closeRepository.save(closeRequest);
 
-        RestaurantEntity restaurant = closeRequest.getRestaurant();
-
         UserEntity user = restaurant.getUser();
-        if(closeRequest.getStatus().equals("ACCEPTED")){
+        if(closeRequest.getStatus().equals(RequestStatus.ACCEPTED)){
+            restaurant.setStatus(RestStatus.CLOSE);
+            restRepository.save(restaurant);
             user.setRole("ROLE_USER");
             userRepository.save(user);
         }
-
-
-        //
         return CloseViewDto.fromEntity(closeRequest);
+    }
+    public CloseViewDto readOneClose(Long closeId){
+        CloseRequestEntity closeRequest = closeRepository.findById(closeId)
+                .orElseThrow(() ->
+                        new ResponseStatusException(HttpStatus.NOT_FOUND));
+        UserEntity user = facade.extractUser();
+
+
+        System.out.println(user.getUsername());
+        System.out.println(closeRequest.getRestaurant().getUser().getUsername());
+        if(!(user.getUsername().equals(closeRequest.getRestaurant().getUser().getUsername())
+                || user.getUsername().equals("admin"))){
+
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+        }
+        return CloseViewDto.fromEntity(closeRequest);
+    }
+    public List<CloseViewDto> adminReadAllClose (RequestStatus status){  // "PENDING"  "ACCEPTED"   "REJECTED"
+        List<CloseViewDto> viewDtoList = new ArrayList<>();
+        if(status == null){
+            List<CloseRequestEntity> closeList = closeRepository.findAllOrderedByStatusAndCreatedAt();
+            for ( CloseRequestEntity o : closeList){
+                viewDtoList.add(CloseViewDto.fromEntity(o));
+            }
+        }
+        else {
+            List<CloseRequestEntity> closeList = closeRepository.findByStatusOrderByCreatedAtDesc(status);
+            for ( CloseRequestEntity o : closeList){
+                viewDtoList.add(CloseViewDto.fromEntity(o));
+            }
+        }
+        return viewDtoList;
+    }
+    public List<CloseViewDto> userReadAllClose(){
+        UserEntity user = facade.extractUser();
+        RestaurantEntity restaurant = user.getRestaurant();
+        List<CloseViewDto> viewDtoList = new ArrayList<>();
+        List<CloseRequestEntity> closeList = closeRepository.findByRestaurantOrderByCreatedAtDesc(restaurant);
+        for ( CloseRequestEntity o : closeList){
+            viewDtoList.add(CloseViewDto.fromEntity(o));
+        }
+        return viewDtoList;
     }
 
     

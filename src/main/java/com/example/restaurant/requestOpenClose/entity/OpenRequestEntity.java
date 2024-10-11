@@ -2,9 +2,8 @@ package com.example.restaurant.requestOpenClose.entity;
 
 import com.example.restaurant.BaseEntity;
 import com.example.restaurant.auth.entity.UserEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import com.example.restaurant.enumList.RequestStatus;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -23,7 +22,9 @@ public class OpenRequestEntity extends BaseEntity {
     private String ownerIdNo;
     private String imageId;     //
     private String reason;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private RequestStatus status;
 
     //  @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;

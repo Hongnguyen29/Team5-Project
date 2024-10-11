@@ -1,6 +1,7 @@
 package com.example.restaurant.restaurants.dto;
 
 import com.example.restaurant.enumList.Category;
+import com.example.restaurant.enumList.RestStatus;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +20,7 @@ public class RestaurantViewDto {
     private String restNumber;
     private String ownerName;
     private String ownerIdNo;
+    private RestStatus status;
 
     private String restImage;
 
@@ -38,6 +40,7 @@ public class RestaurantViewDto {
                 .ownerIdNo(entity.getOwnerIdNo())
 
                 .restImage(entity.getRestImage())
+                .status(entity.getStatus())
 
                 .address(entity.getAddress())
                 .phone(entity.getPhone())

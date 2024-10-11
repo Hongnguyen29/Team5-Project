@@ -1,5 +1,6 @@
 package com.example.restaurant.requestOpenClose.dto;
 
+import com.example.restaurant.enumList.RequestStatus;
 import com.example.restaurant.requestOpenClose.entity.OpenRequestEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
@@ -22,7 +23,7 @@ public class OpenViewDto {
     private String ownerIdNo;
     private String imageId;
     private String reason;
-    private String status;
+    private RequestStatus status;
 //    private UserEntity user;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
