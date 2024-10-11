@@ -4,9 +4,9 @@ public enum Category {
     KOREAN_FOOD,
     JAPANESE_FOOD,
     VIETNAMESE_FOOD,
-    EUROPEAN_FOOD,
+    WESTERN_FOOD,
     FAST_FOOD,
     PUB_FOOD,
-    FRIED_CHICKEN,
+    CHICKEN,
     PIZZA
 }

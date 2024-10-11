@@ -1,5 +1,6 @@
 package com.example.restaurant.requestOpenClose;
 
+import com.example.restaurant.requestOpenClose.dto.CloseViewDto;
 import com.example.restaurant.requestOpenClose.dto.OpenConfirmDto;
 import com.example.restaurant.requestOpenClose.dto.OpenDto;
 import com.example.restaurant.requestOpenClose.dto.OpenViewDto;
@@ -18,7 +19,7 @@ import java.util.List;
 public class RequestController {
     private final RequestService requestService;
 
-    @PostMapping("/openRequest")
+    @PostMapping("/user/openRequest")
     public ResponseEntity<?> openShop(
             @ModelAttribute OpenDto dto) {
         try {
@@ -88,6 +89,21 @@ public class RequestController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred.");
         }
     }
+    @PostMapping("rest/close")
+    public ResponseEntity<?> closeRestaurant(
+            @RequestParam
+            String reason
+    ) {
+        try {
+            CloseViewDto closeViewDto = requestService.closeRestaurant(reason);
+            return ResponseEntity.ok(closeViewDto);
+        } catch (ResponseStatusException e) {
+            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An unexpected error occurred.");
+        }
+    }
+
 
 
 

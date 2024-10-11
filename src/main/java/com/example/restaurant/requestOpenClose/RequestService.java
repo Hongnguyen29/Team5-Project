@@ -4,9 +4,11 @@ import com.example.restaurant.ImageFileUtils;
 import com.example.restaurant.auth.AuthenticationFacade;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
+import com.example.restaurant.requestOpenClose.dto.CloseViewDto;
 import com.example.restaurant.requestOpenClose.dto.OpenConfirmDto;
 import com.example.restaurant.requestOpenClose.dto.OpenDto;
 import com.example.restaurant.requestOpenClose.dto.OpenViewDto;
+import com.example.restaurant.requestOpenClose.entity.CloseRequestEntity;
 import com.example.restaurant.requestOpenClose.entity.OpenRequestEntity;
 import com.example.restaurant.requestOpenClose.repo.CloseRequestRepository;
 import com.example.restaurant.requestOpenClose.repo.OpenRequestRepository;
@@ -15,6 +17,7 @@ import com.example.restaurant.restaurants.repo.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
@@ -151,6 +154,51 @@ public class RequestService {
         }
         return viewDtoList;
     }
+
+    // CLOSE RESTAURANT
+    @Transactional
+    public CloseViewDto closeRestaurant(String reason){
+        UserEntity user = facade.extractUser();
+        RestaurantEntity restaurant = user.getRestaurant();
+
+        if(reason == null || reason.isEmpty()){
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,"Please check the reason");
+        }
+        CloseRequestEntity closeRequest = new CloseRequestEntity();
+        closeRequest.setReason(reason);
+        closeRequest.setCreatedAt(LocalDateTime.now());
+        closeRequest.setStatus("PENDING");
+        closeRequest.setRestaurant(restaurant);
+        closeRepository.save(closeRequest);
+
+        return CloseViewDto.fromEntity(closeRequest);
+
+    }
+    @Transactional
+    public CloseViewDto closeConfirm(Long closeId){
+        CloseRequestEntity closeRequest = closeRepository
+                .findById(closeId).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND));
+        closeRequest.setStatus("ACCEPTED");
+        closeRequest.setProcessedAt(LocalDateTime.now());
+        closeRepository.save(closeRequest);
+
+        RestaurantEntity restaurant = closeRequest.getRestaurant();
+
+        UserEntity user = restaurant.getUser();
+        if(closeRequest.getStatus().equals("ACCEPTED")){
+            user.setRole("ROLE_USER");
+            userRepository.save(user);
+        }
+
+
+        //
+        return CloseViewDto.fromEntity(closeRequest);
+    }
+
+    
+
 
 
 

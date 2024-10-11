@@ -41,10 +41,13 @@ public class WebSecurityConfig {
 
                     ).authenticated();
 
-                    auth.requestMatchers("/openRequest"
+                    auth.requestMatchers("/user/openRequest"
                     ).hasRole("USER");
 
-                    auth.requestMatchers("/rest/updateInfo"
+                    auth.requestMatchers(
+                            "/rest/updateInfo",
+                            "/rest/updateImg",
+                            "rest/close"
                     ).hasRole("OWNER");
 
                     auth.requestMatchers(

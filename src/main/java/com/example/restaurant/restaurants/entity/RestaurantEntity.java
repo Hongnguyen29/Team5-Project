@@ -3,6 +3,7 @@ package com.example.restaurant.restaurants.entity;
 import com.example.restaurant.BaseEntity;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.enumList.Category;
+import com.example.restaurant.requestOpenClose.entity.CloseRequestEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -34,6 +35,10 @@ public class RestaurantEntity extends BaseEntity {
     @OneToOne
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
+    @OneToOne
+    @JoinColumn(name = "restaurant_id")
+    private CloseRequestEntity closeRequest;
 
 
 }

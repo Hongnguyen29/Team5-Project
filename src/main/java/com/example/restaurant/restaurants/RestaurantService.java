@@ -1,5 +1,6 @@
 package com.example.restaurant.restaurants;
 
+import com.example.restaurant.ImageFileUtils;
 import com.example.restaurant.auth.AuthenticationFacade;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
@@ -12,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.FieldError;
+import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @Service
@@ -20,6 +22,7 @@ public class RestaurantService {
     private final UserRepository userRepository;
     private final RestaurantRepository restRepository;
     private final AuthenticationFacade facade;
+    private final ImageFileUtils imageFileUtils;
 
     @Transactional
     public RestaurantViewDto updateInfo(RestaurantDto dto){
@@ -45,6 +48,17 @@ public class RestaurantService {
         }
         restRepository.save(restaurant);
 
+        return RestaurantViewDto.fromEntity(restaurant);
+    }
+    public RestaurantViewDto updateImage (MultipartFile file){
+        UserEntity user = facade.extractUser();
+        RestaurantEntity restaurant = user.getRestaurant();
+        String path = imageFileUtils.saveFile(
+                String.format("users/%d/",user.getId()),
+                user.getUsername()+"restImage", file
+        );
+        restaurant.setRestImage(path);
+        restRepository.save(restaurant);
         return RestaurantViewDto.fromEntity(restaurant);
     }
 
