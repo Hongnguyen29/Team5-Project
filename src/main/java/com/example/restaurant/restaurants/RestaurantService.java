@@ -16,6 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.FieldError;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Optional;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -70,6 +72,10 @@ public class RestaurantService {
         restaurant.setRestImage(path);
         restRepository.save(restaurant);
         return RestaurantViewDto.fromEntity(restaurant);
+    }
+
+    public Optional<RestaurantEntity> findById(Long id){
+        return restRepository.findById(id);
     }
 
 

@@ -1,6 +1,7 @@
 package com.example.restaurant.restaurants.entity;
 
 import com.example.restaurant.BaseEntity;
+import com.example.restaurant.MenuEntity;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.enumList.Category;
 import com.example.restaurant.enumList.RestStatus;
@@ -9,6 +10,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -44,6 +47,9 @@ public class RestaurantEntity extends BaseEntity {
 
     @OneToOne(mappedBy = "restaurant")
     private CloseRequestEntity closeRequest;
+
+    @OneToMany(mappedBy = "restaurant", orphanRemoval = true)
+    private List<MenuEntity> menuList = new ArrayList<>();
 
 
 }
