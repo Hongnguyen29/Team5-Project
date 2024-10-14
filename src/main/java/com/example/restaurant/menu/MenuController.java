@@ -1,6 +1,6 @@
 package com.example.restaurant.menu;
 
-import ch.qos.logback.core.model.Model;
+
 import com.example.restaurant.menu.dto.MenuUpdateDto;
 import com.example.restaurant.restaurants.RestaurantService;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
