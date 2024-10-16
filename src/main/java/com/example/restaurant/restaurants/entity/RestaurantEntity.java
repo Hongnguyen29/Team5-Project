@@ -39,6 +39,7 @@ public class RestaurantEntity extends BaseEntity {
     private UserEntity user;
     @OneToOne(mappedBy = "restaurant")
     private CloseRequestEntity closeRequest;
+
     @OneToMany(mappedBy = "restaurant",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<MenuEntity> menus = new ArrayList<>();
 }

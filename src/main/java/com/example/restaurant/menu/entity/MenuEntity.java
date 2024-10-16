@@ -19,6 +19,7 @@ public class MenuEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Builder.Default
     private MenuStatus status = MenuStatus.AVAILABLE;
+
     @ManyToOne
     @JoinColumn(name = "restaurant_id")
     private RestaurantEntity restaurant;

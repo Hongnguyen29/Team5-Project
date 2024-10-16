@@ -36,6 +36,8 @@ public class MenuService {
     public MenuViewDto addMenu(MenuDto dto){
         UserEntity user = facade.extractUser();
         RestaurantEntity restaurant = userRestaurant(user);
+        RestaurantEntity restaurant1 =
+                restaurantRepository.resMenus(restaurant.getId()).orElseThrow();
         checkShopStatus(restaurant.getId());
         String path = imageFileUtils.saveFile(
                 String.format("restaurant/%d/",restaurant.getId()),
@@ -51,17 +53,16 @@ public class MenuService {
         menuRepository.save(menu);
         log.info("--------------------------0-----------------");
 
-        List<MenuEntity> menus = restaurant.getMenus();
+        List<MenuEntity> menus = restaurant1.getMenus();
         log.info("----------------------------------1----------");
        // log.info(menus.toString());
-     //   menus.add(menu);
+        menus.add(menu);
         log.info("--------------------------------------------");
         //log.info(menus.toString());
         restaurantRepository.save(restaurant);
         MenuViewDto dto1 = MenuViewDto.fromEntity(menu);
         return dto1;
     }
-
     @Transactional
     public MenuViewDto updateMenu(
             Long menuId,
@@ -120,20 +121,12 @@ public class MenuService {
                 .map(MenuViewDto::fromEntity) // Sử dụng map để chuyển đổi
                 .collect(Collectors.toList()); // Thu thập lại thành List
     }
-
-
-
-
     public Page<MenuViewDto> readPage(Pageable pageable,Long restId) {  // tra ve cac trang menu
         RestaurantEntity restaurant = restaurantRepository.findById(restId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR));
         return menuRepository.findAllByRestaurantId(restaurant.getId(), pageable)
                 .map(MenuViewDto::fromEntity);
     }
-
-
-
-
 
 
 
