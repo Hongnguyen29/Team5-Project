@@ -1,6 +1,11 @@
 package com.example.restaurant.restaurants.entity;
 
+<<<<<<< HEAD
 import com.example.restaurant.support.BaseEntity;
+=======
+import com.example.restaurant.BaseEntity;
+import com.example.restaurant.MenuEntity;
+>>>>>>> 1e1386104fc269308dbf3d1dff1a09a058df938a
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.enumList.Category;
 import com.example.restaurant.enumList.RestStatus;
@@ -39,7 +44,15 @@ public class RestaurantEntity extends BaseEntity {
     private UserEntity user;
     @OneToOne(mappedBy = "restaurant")
     private CloseRequestEntity closeRequest;
+
+<<<<<<< HEAD
     @OneToMany(mappedBy = "restaurant",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<MenuEntity> menus = new ArrayList<>();
+=======
+    @OneToMany(mappedBy = "restaurant", orphanRemoval = true)
+    private List<MenuEntity> menuList = new ArrayList<>();
+
+
+>>>>>>> 1e1386104fc269308dbf3d1dff1a09a058df938a
 }
 

@@ -23,6 +23,8 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.Optional;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -130,6 +132,10 @@ public class RestaurantService {
         restaurant.setRestImage(path);
         restRepository.save(restaurant);
         return RestaurantViewDto.fromEntity(restaurant);
+    }
+
+    public Optional<RestaurantEntity> findById(Long id){
+        return restRepository.findById(id);
     }
 
 
