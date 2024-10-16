@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식당 예약 시스템</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #ff6347;
+            font-size: 36px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            background-color: #ff6347;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e5533d;
+        }
+        .success-message {
+            text-align: center;
+            margin-top: 20px;
+            color: #28a745;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>레스토랑 예약</h1>
+        <p>원하는 시간과 인원을 선택하여 예약하세요</p>
+    </header>
+
+    <form id="reservationForm">
+        <label for="restaurant">레스토랑 이름</label>
+        <input type="text" id="restaurant" name="restaurant" placeholder="레스토랑 이름을 입력하세요" required>
+
+        <label for="date">예약 날짜</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">예약 시간</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="people">예약 인원</label>
+        <select id="people" name="people" required>
+            <option value="1">1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명</option>
+            <option value="6">6명</option>
+        </select>
+
+        <button type="submit">예약하기</button>
+    </form>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+        예약이 완료되었습니다!
+    </div>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // 폼 입력 데이터 가져오기
+            const restaurant = document.getElementById('restaurant').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const people = document.getElementById('people').value;
+
+            // 간단한 유효성 검사 (빈 칸 여부)
+            if (!restaurant || !date || !time || !people) {
+                alert('모든 항목을 채워주세요.');
+                return;
+            }
+
+            // 성공 메시지 출력
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
