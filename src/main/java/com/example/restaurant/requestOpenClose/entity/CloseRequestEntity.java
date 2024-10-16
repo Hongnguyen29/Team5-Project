@@ -1,7 +1,6 @@
 package com.example.restaurant.requestOpenClose.entity;
 
-import com.example.restaurant.BaseEntity;
-import com.example.restaurant.auth.entity.UserEntity;
+import com.example.restaurant.support.BaseEntity;
 import com.example.restaurant.enumList.RequestStatus;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
 import jakarta.persistence.*;

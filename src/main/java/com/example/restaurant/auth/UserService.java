@@ -1,6 +1,6 @@
 package com.example.restaurant.auth;
 
-import com.example.restaurant.ImageFileUtils;
+import com.example.restaurant.support.ImageFileUtils;
 import com.example.restaurant.auth.dto.*;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.jwt.JwtTokenUtils;
@@ -97,7 +97,9 @@ public class UserService {
     public UserDto updateImage(MultipartFile file){
         UserEntity user = authFacade.extractUser();
         String path = imageFileUtils.saveFile(
-                String.format("users/%d/",user.getId()), "profile",file
+                String.format("users/%d/",user.getId()),
+                "profile",
+                file
         );
         user.setImage(path);
         return UserDto.fromEntity(userRepository.save(user));

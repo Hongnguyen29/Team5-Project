@@ -17,8 +17,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
-
-
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
@@ -33,6 +31,4 @@ public class CustomUserDetailsService implements UserDetailsService {
     public boolean userExists (String username){
         return userRepository.existsByUsername(username);
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.example.restaurant;
+package com.example.restaurant.support;
 
 import jakarta.persistence.*;
 import lombok.Getter;

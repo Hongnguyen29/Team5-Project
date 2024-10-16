@@ -1,5 +1,6 @@
-package com.example.restaurant;
+package com.example.restaurant.reservation;
 
+import com.example.restaurant.support.BaseEntity;
 import jakarta.persistence.Entity;
 import lombok.*;
 
@@ -12,7 +13,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ReservationEntity extends BaseEntity{
+public class ReservationEntity extends BaseEntity {
     private String nameCustom;
     private LocalDate date;
     private LocalTime time;

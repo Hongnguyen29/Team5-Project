@@ -1,6 +1,6 @@
 package com.example.restaurant.requestOpenClose;
 
-import com.example.restaurant.ImageFileUtils;
+import com.example.restaurant.support.ImageFileUtils;
 import com.example.restaurant.auth.AuthenticationFacade;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
@@ -19,7 +19,6 @@ import com.example.restaurant.restaurants.repo.RestaurantRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
@@ -148,7 +147,11 @@ public class RequestService {
     public List<OpenViewDto> userReadAll(){
         UserEntity user = facade.extractUser();
         List<OpenViewDto> viewDtoList = new ArrayList<>();
+
         List<OpenRequestEntity> openList = openRepository.findByUserOrderByCreatedAtDesc(user);
+       // List<OpenRequestEntity> openList =
+        // user.getOpenRequests();  tai sao de the nay thi bi loi
+
         for ( OpenRequestEntity o : openList){
             viewDtoList.add(OpenViewDto.fromEntity(o));
         }
@@ -166,7 +169,6 @@ public class RequestService {
         if(closeRepository.existsByRestaurant(restaurant)){
             throw new ResponseStatusException(HttpStatus.FORBIDDEN);
         }
-
         if(reason == null || reason.isEmpty()){
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,"Please check the reason");

@@ -1,4 +1,4 @@
-package com.example.restaurant;
+package com.example.restaurant.support;
 
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
@@ -6,9 +6,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Admin {
-    public Admin(UserRepository userRepository,
-                 PasswordEncoder passwordEncoder){
+public class AdminInfoTestData {
+    public AdminInfoTestData(UserRepository userRepository,
+                             PasswordEncoder passwordEncoder){
         if (userRepository.findByUsername("admin").isEmpty()) {
             UserEntity admin = UserEntity.builder()
                     .username("admin")

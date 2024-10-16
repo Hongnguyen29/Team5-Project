@@ -1,4 +1,4 @@
-package com.example.restaurant;
+package com.example.restaurant.support;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
