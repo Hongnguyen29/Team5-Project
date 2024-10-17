@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    height: calc(100vh - 92px);
+    margin: 46px 0 46px 0;
+    background-color: #d9d9d9;
+  
+}
+
+html ,body{
+    font-size: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#header {
+    width: 100%;
+    height: 46px;
+    background-color: #fad02c;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+
+
+.nav-btn {
+    width: 33.3333%;
+    height: 46px;
+    float: left;
+    font-size: 30px;
+    margin-top: 6px;
+    padding-left: 180px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    opacity: 0.6;
+}
+
+.logo {
+    width: 33.3333%;
+    height: 46px;
+    display: inline-block;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+#nav {
+    float: right;
+    width: 33.3333%;
+    /* display: inline-block; */
+}
+
+#nav li {
+    display: block;
+    list-style: none;
+    margin: 0 8px;
+    position: relative;
+}
+
+#nav li a {
+    text-decoration: none;
+    line-height: 46px;
+    padding: 2px 24px;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #000;
+}
+
+#nav li a:hover {
+    background-color: #967908;
+    border-radius: 25px;
+}
+
+#nav>li {
+    display: inline-block;
+}
+
+#content .res-list{
+    background-color: #fff;
+}
+#content{
+
+}
+
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: auto;
+    max-width: 600px;
+
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details {
+    font-size: 16px;
+}
+
+.profile-details h2 {
+    margin-bottom: 5px;
+}
+
+/* Reservations and Reviews */
+.reservations-reviews {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.my-reservation, .my-review {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-reservation h3, .my-review h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reservation-list, .review-list {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.reservation, .review {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reservation.selected {
+    border: 2px solid purple;
+}
+
+.stars {
+    color: gold;
+}
+
+#footer {
+    /* clear: both; */
+    width: 100%;
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+}
+
+#footer p{
+    font-size: 24px;
+    line-height: 46px;
+}

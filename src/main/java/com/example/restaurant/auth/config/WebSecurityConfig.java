@@ -26,7 +26,10 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/","static/**","/category",
                             "/restaurant/{restId}",
-                            "/search"
+                            "/search",
+                            "/restaurant/1/{restId}",
+                            "/restaurant/{restId}/menu",
+                            "/restaurant/menu/{menuId}"
                     ).permitAll();
 
                     auth.requestMatchers("/login",
@@ -52,7 +55,9 @@ public class WebSecurityConfig {
                     auth.requestMatchers(
                             "/rest/updateInfo",
                             "/rest/updateImg",
-                            "rest/close"
+                            "rest/close",
+                            "/rest/menu/{menuId}",
+                            "/rest/menu"
 
                     ).hasRole("OWNER");
 
@@ -62,16 +67,6 @@ public class WebSecurityConfig {
                             "/admin/close/confirm/{closeId}",
                             "/admin/close/ReadAll"
                     ).hasRole("ADMIN");
-
-
-
-
-
-
-
-
-
-
 
                 })
                 .sessionManagement(session -> session

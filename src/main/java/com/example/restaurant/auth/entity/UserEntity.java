@@ -1,8 +1,7 @@
 package com.example.restaurant.auth.entity;
 
 
-import com.example.restaurant.BaseEntity;
-import com.example.restaurant.requestOpenClose.entity.CloseRequestEntity;
+import com.example.restaurant.support.BaseEntity;
 import com.example.restaurant.requestOpenClose.entity.OpenRequestEntity;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
 import jakarta.persistence.*;
@@ -27,24 +26,17 @@ public class UserEntity extends BaseEntity {
     @Column(unique = true)
     private String phone;
     private String image;
-
     @Builder.Default
     private String role = "ROLE_USER";
-
     @OneToOne(mappedBy = "user")
     private RestaurantEntity restaurant;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private final List<OpenRequestEntity> openRequests = new ArrayList<>();
-
 /*    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private final List<CloseRequestEntity> closeRequests = new ArrayList<>();*/
-
 /*
     @ManyToMany(mappedBy = "userLike")
     private final List<RestaurantEntity> restaurants = new ArrayList<>();
 */
-
-
-
 }

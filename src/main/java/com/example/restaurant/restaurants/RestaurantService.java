@@ -1,6 +1,6 @@
 package com.example.restaurant.restaurants;
 
-import com.example.restaurant.ImageFileUtils;
+import com.example.restaurant.support.ImageFileUtils;
 import com.example.restaurant.auth.AuthenticationFacade;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.auth.repo.UserRepository;
@@ -13,17 +13,17 @@ import com.example.restaurant.restaurants.repo.RestaurantRepository;
 import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.FieldError;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -117,6 +117,7 @@ public class RestaurantService {
 
         return RestaurantViewDto.fromEntity(restaurant);
     }
+    @Transactional
     public RestaurantViewDto updateImage (MultipartFile file){
 
         UserEntity user = facade.extractUser();
@@ -131,6 +132,10 @@ public class RestaurantService {
         restaurant.setRestImage(path);
         restRepository.save(restaurant);
         return RestaurantViewDto.fromEntity(restaurant);
+    }
+
+    public Optional<RestaurantEntity> findById(Long id){
+        return restRepository.findById(id);
     }
 
 

@@ -50,7 +50,6 @@ public class UserController {
             throw new ResponseStatusException(
                     HttpStatus.SERVICE_UNAVAILABLE, "Error");
         }
-
     }
     @PutMapping("/auth/updateInfo")
     public ResponseEntity<?> updateProfile(
@@ -91,6 +90,5 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("An unexpected error occurred");
         }
-
     }
 }
