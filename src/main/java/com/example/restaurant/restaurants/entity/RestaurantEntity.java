@@ -1,5 +1,9 @@
 package com.example.restaurant.restaurants.entity;
 
+
+import com.example.restaurant.support.BaseEntity;
+
+
 import com.example.restaurant.support.BaseEntity;
 
 import com.example.restaurant.auth.entity.UserEntity;
@@ -44,5 +48,6 @@ public class RestaurantEntity extends BaseEntity {
     @Builder.Default
     @OneToMany(mappedBy = "restaurant",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<MenuEntity> menus = new ArrayList<>();
+
 }
 
