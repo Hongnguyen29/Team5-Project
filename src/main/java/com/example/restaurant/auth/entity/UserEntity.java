@@ -1,6 +1,7 @@
 package com.example.restaurant.auth.entity;
 
 
+import com.example.restaurant.reservation.entity.ReservationEntity;
 import com.example.restaurant.support.BaseEntity;
 import com.example.restaurant.requestOpenClose.entity.OpenRequestEntity;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
@@ -33,8 +34,16 @@ public class UserEntity extends BaseEntity {
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     private final List<OpenRequestEntity> openRequests = new ArrayList<>();
-/*    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    private final List<CloseRequestEntity> closeRequests = new ArrayList<>();*/
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private final List<ReservationEntity> reservation = new ArrayList<>();
+
+
+
+
+
+
+
 /*
     @ManyToMany(mappedBy = "userLike")
     private final List<RestaurantEntity> restaurants = new ArrayList<>();
