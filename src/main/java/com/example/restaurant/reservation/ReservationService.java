@@ -43,7 +43,6 @@ public class ReservationService {
                     HttpStatus.BAD_REQUEST,
                     "You already have an appointment at this time.");
         }
-
         ReservationEntity reservation =
                 ReservationEntity.builder()
                         .nameCustom(dto.getNameCustom())
@@ -62,6 +61,8 @@ public class ReservationService {
 
         return ReservationView.fromEntity(reservation);
     }
+
+
 
 
 
