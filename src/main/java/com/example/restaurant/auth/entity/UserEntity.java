@@ -27,6 +27,7 @@ public class UserEntity extends BaseEntity {
     @Column(unique = true)
     private String phone;
     private String image;
+
     @Builder.Default
     private String role = "ROLE_USER";
     @OneToOne(mappedBy = "user")
