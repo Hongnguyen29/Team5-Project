@@ -67,6 +67,7 @@ public class WebSecurityConfig {
                             "/admin/close/confirm/{closeId}",
                             "/admin/close/ReadAll"
                     ).hasRole("ADMIN");
+                    auth.requestMatchers("/view/**","/static/**").permitAll();
 
                 })
                 .sessionManagement(session -> session
