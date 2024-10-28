@@ -5,33 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>식당예약시스템</title>
     <!-- Reset Css -->
-     <link rel="stylesheet" href="./assets/css/reset.css">
+     <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
 
      <!-- Style Css -->
-    <link rel="stylesheet" href="./myprofile.css">
-    <link rel="stylesheet" href="assets/icons/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../static/assets/css/styles.css">
+    <link rel="stylesheet" href="../static/assets/icons/themify-icons/themify-icons.css">
 </head>
-<body>$
+<body>
     <div id="main">
        <!-- Header -->
         <header>
             <div id="header">
                 <div class="nav-btn">
                     <i class="nav-icon ti-menu"></i>
+                    <ul class="subnav">
+                        <li><a href="restaurant/restaurant.html">Restaurant registration</a></li>
+                        <li><a href="user/myprofile.html">My Page</a></li>
+                    </ul>
                 </div>
                 <div class="logo">
                     <p>Inside Out</p>
                 </div>
                 <ul id="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Log in</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Log in</a></li>
                 </ul>
             </div>
         </header>
         <!-- Body -->
         <section class="profile-section">
             <div class="profile-info">
-                <div class="profile-pic"></div>
+                <div class="profile-pic">
+                    <img src="../static/assets/img/user/user.png" alt="">
+                </div>
                 <div class="profile-details">
                     <h2>Henry</h2>
                     <p>Email: insideout@gmail.com</p>

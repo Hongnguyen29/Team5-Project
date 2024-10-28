@@ -1,0 +1,40 @@
+.review {
+    width: 100%;
+    height: 100vh;
+    background-color: #d9d9d9;
+}
+.review .review-group-1 {
+    position: relative;
+    text-align: center;
+
+}
+.review .avata {
+    width: 20%;
+    height: 100%;
+    float: left;
+    position: absolute;
+}
+
+.review .content {
+
+}
+
+.review .title {
+
+}
+
+.review .user-name {
+
+}
+
+.review .ranking {
+
+}
+
+.review .date {
+
+}
+
+.review .disc{
+    
+}

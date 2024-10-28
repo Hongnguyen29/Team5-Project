@@ -4,27 +4,30 @@
     box-sizing: border-box;
 }
 
-#main {
-    height: calc(100vh - 92px);
-    margin: 46px 0 46px 0;
-    background-color: #d9d9d9;
-  
-}
-
-html ,body{
-    font-size: 'Poppins',sans-serif;
+html, body {
+    font-size: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+}
+
+#main {
+    min-height: 100vh;
+    padding-top: 46px; /* Bằng với chiều cao header */
+    padding-bottom: 46px; /* Bằng với chiều cao footer */
+    background-color: #d9d9d9;
 }
 
 #header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 46px;
     background-color: #fad02c;
     position: fixed;
     top: 0;
     z-index: 1;
+
 }
 
 
@@ -37,26 +40,26 @@ html ,body{
     margin-top: 6px;
     padding-left: 180px;
     cursor: pointer;
+    position: relative;
 }
 
 .nav-btn:hover {
-    opacity: 0.6;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.9; /* Giảm mức độ mờ để tạo trải nghiệm mượt mà hơn */
 }
 
 .logo {
     width: 33.3333%;
-    height: 46px;
-    display: inline-block;
     text-align: center;
     font-size: 30px;
-    margin-top: 4px;
     cursor: pointer;
+    flex: 1;
 }
 
+
 #nav {
-    float: right;
-    width: 33.3333%;
-    /* display: inline-block; */
+    display: flex;
+    justify-content: flex-end;
 }
 
 #nav li {
@@ -84,16 +87,9 @@ html ,body{
     display: inline-block;
 }
 
-#content .res-list{
-    background-color: #fff;
-}
-#content{
-
-}
-
 
 /* Profile Section */
-.profile-section {
+/* .profile-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,7 +97,23 @@ html ,body{
     padding: 20px;
     margin: auto;
     max-width: 600px;
+    position: relative;
+    margin:;
 
+} */
+
+.profile-section {
+    margin-top: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: auto; /* Không bắt buộc, nhưng có thể thêm để cân đối */
+    max-width: 600px;
+    width: 100%; /* Có thể thêm để đảm bảo nó chiếm đủ chiều rộng trên màn hình nhỏ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
+    border-radius: 10px; /* Tùy chọn, tạo góc bo tròn cho đẹp */
 }
 
 .profile-info {
@@ -115,6 +127,8 @@ html ,body{
     width: 80px;
     height: 80px;
     background-color: #ccc;
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -181,8 +195,38 @@ html ,body{
     color: #fff;
     text-align: center;
 }
+.reservation-list, .review-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+
+
 
 #footer p{
     font-size: 24px;
     line-height: 46px;
+}
+
+
+@media (max-width: 768px) {
+    .nav-btn {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .profile-section {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #footer p {
+        font-size: 18px;
+    }
 }

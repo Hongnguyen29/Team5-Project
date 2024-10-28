@@ -5,7 +5,7 @@
 }
 
 html ,body{
-    font-family: 'Poppins',sans-serif;
+    font-size: 'Poppins',sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -34,11 +34,40 @@ html ,body{
     margin-top: 6px;
     padding-left: 180px;
     cursor: pointer;
+    position: relative;
 }
 
-.nav-btn:hover {
+#header > .nav-btn:hover i{
     opacity: 0.6;
 }
+#header .nav-btn:hover .subnav {
+    display: block;
+}
+
+#header .subnav{
+    background-color: #fff;
+    position: absolute;
+    color: #000;
+    font-size: 20px;
+    margin: 5px;
+    list-style-type: none;
+    display: none;
+}
+
+
+#header .subnav a{
+    margin: 3px;
+    padding: auto;
+    color: #000;
+    text-decoration: none;
+}
+#header .subnav li:hover {
+    background-color: #d9d9d9;
+
+
+}
+
+
 
 .logo {
     width: 33.3333%;
@@ -53,7 +82,7 @@ html ,body{
 #nav {
     float: right;
     width: 33.3333%;
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 #nav li {
@@ -80,7 +109,7 @@ html ,body{
 #nav>li {
     display: inline-block;
 }
-/*
+/* 
 #content {
     width: 1000px;
     height: 100%;
@@ -92,7 +121,7 @@ html ,body{
 #content .res-list{
     /* background-color: #fff; */
     margin-top: 30px;
-
+    
 
 }
 
@@ -178,7 +207,7 @@ html ,body{
     color: #fff;
     border: none;
     border-radius: 10%;
-    margin: 10px;
+    margin: 10px;   
 }
 
 .login-box p{
@@ -218,22 +247,102 @@ html ,body{
     margin: 10px;
 }
 
+
+.profile-section {
+    margin-top: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin: auto; /* Không bắt buộc, nhưng có thể thêm để cân đối */
+    max-width: 600px;
+    width: 100%; /* Có thể thêm để đảm bảo nó chiếm đủ chiều rộng trên màn hình nhỏ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
+    border-radius: 10px; /* Tùy chọn, tạo góc bo tròn cho đẹp */
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details {
+    font-size: 16px;
+}
+
+.profile-details h2 {
+    margin-bottom: 5px;
+}
+
+/* Reservations and Reviews */
+.reservations-reviews {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.my-reservation, .my-review {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-reservation h3, .my-review h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.reservation-list, .review-list {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.reservation, .review {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reservation.selected {
+    border: 2px solid purple;
+}
+
+.stars {
+    color: gold;
+}
+
 .footer-nav {
-   bottom: 80px;
-   position: fixed;
-   text-align: center;
-   line-height: 50px;
-   width: 100%;
+    bottom: 50px;
+    position: fixed;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
 
 }
-
 .footer-nav a {
-    margin: 0 20px;
-    font-size: 40px;
     color: #000;
-
+    text-align: center;
+    margin: 10px;
 }
-
 .footer-nav a:hover {
     color: #f00;
 }
@@ -258,5 +367,22 @@ html ,body{
 }
 
 
+@media (max-width: 768px) {
+    .nav-btn {
+        font-size: 20px;
+        padding-left: 10px;
+    }
 
+    .logo {
+        font-size: 20px;
+    }
 
+    .profile-section {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #footer p {
+        font-size: 18px;
+    }
+}
