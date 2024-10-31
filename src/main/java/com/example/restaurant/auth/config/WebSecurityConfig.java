@@ -24,6 +24,7 @@ public class WebSecurityConfig {
     ) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers("view/**").permitAll();
                     auth.requestMatchers("/","static/**","/category"
                     ).permitAll();
 

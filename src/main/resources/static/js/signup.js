@@ -28,13 +28,16 @@ formSignup.addEventListener("submit", e=>{
             "Content-type": "Application/json",
         },
         body: JSON.stringify(dataInput)
-    }).then(response=>{
+    }) //goi api
+    .then(response=>{
         if (response.ok){
-            location.href="../../login.gtml"; //Link front end
+            location.href="login"; //Link front end
             return response.json();
         } else{
             return response.text().then(text=>{alert(text)})
         }
-    })
+    } // xu li api tra ve
+)
+.catch(err=> console.log(err))
     
 })
