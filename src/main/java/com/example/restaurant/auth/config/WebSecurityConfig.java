@@ -59,7 +59,7 @@ public class WebSecurityConfig {
                             "/rest/menu/{menuId}",
                             "/rest/menu"
 
-                    ).hasRole("OWNER");
+                    ).permitAll();
 
                     auth.requestMatchers(
                             "/admin/open/confirm/{openId}",
