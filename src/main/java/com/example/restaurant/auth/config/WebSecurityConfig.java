@@ -24,12 +24,18 @@ public class WebSecurityConfig {
     ) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers("/view/**").permitAll();
                     auth.requestMatchers("/","static/**","/category",
                             "/restaurant/{restId}",
+                            "/restaurant/{restId}/reservation",
                             "/search",
-                            "/restaurant/1/{restId}",
+                            "/restaurant/page/{restId}",
                             "/restaurant/{restId}/menu",
-                            "/restaurant/menu/{menuId}"
+                            "/restaurant/menu/{menuId}",
+                            "/restaurant/{restId}/review",
+                            "/restaurant/{restId}/star",
+                            "/review/{reviewId}"
+
                     ).permitAll();
 
                     auth.requestMatchers("/login",
@@ -45,11 +51,19 @@ public class WebSecurityConfig {
                             "/auth/opens/readAll",
                             "/auth/close/{closeId}",
                             "/auth/close/readAll",
-                            "/myRestaurant"
+                            "/myRestaurant",
+                            "/auth/reservation/{reservationId}"  //nguoi dung hoặc
+                            // chủ cửa hàng xem 1 lịch hẹn cụ thể
 
                     ).authenticated();
 
-                    auth.requestMatchers("/user/openRequest"
+                    auth.requestMatchers(
+                            "/user/openRequest",
+                            "/user/reservation/{reservationId}",  // hủy lịch hẹn
+                            "/user/reservation" , // nguoi dung xem toan bo lich hen minh da tao
+                            //"/user/reservation/{reservationId}",
+                            "/user/review/{reviewId}",
+                            "/user/review"
                     ).hasRole("USER");
 
                     auth.requestMatchers(
@@ -57,7 +71,11 @@ public class WebSecurityConfig {
                             "/rest/updateImg",
                             "rest/close",
                             "/rest/menu/{menuId}",
-                            "/rest/menu"
+                            "/rest/menu",
+                            "/rest/reservation/{reservationId}",  // xác nhận lịch hẹn ( đồng ý hoặc hủy)
+                            "/rest/reservation", //cua hang xem toan bo lich hen cua quan
+                            "/rest/complete/{reservationId}"
+
 
                     ).hasRole("OWNER");
 
@@ -67,6 +85,7 @@ public class WebSecurityConfig {
                             "/admin/close/confirm/{closeId}",
                             "/admin/close/ReadAll"
                     ).hasRole("ADMIN");
+
 
                 })
                 .sessionManagement(session -> session

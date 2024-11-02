@@ -3,6 +3,7 @@ package com.example.restaurant.reservation.entity;
 import com.example.restaurant.auth.entity.UserEntity;
 import com.example.restaurant.enumList.ReservationStatus;
 import com.example.restaurant.restaurants.entity.RestaurantEntity;
+import com.example.restaurant.review.entity.ReviewEntity;
 import com.example.restaurant.support.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,6 +11,8 @@ import lombok.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Setter
 @Getter
@@ -19,8 +22,7 @@ import java.time.LocalTime;
 @Builder
 public class ReservationEntity extends BaseEntity {
     private String nameCustom;  // tên khách
-    private LocalDate date; // ngày
-    private LocalTime time;  // gio
+    private LocalDateTime time; // ngày giờ cụ thể
     private Integer peopleNumber;  // số người
     private String note; // ghi chú
 
@@ -37,6 +39,9 @@ public class ReservationEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "restaurant_id")
     private RestaurantEntity restaurant;
+
+    @OneToOne(mappedBy = "reservation")
+    private ReviewEntity review;
 
 
 }

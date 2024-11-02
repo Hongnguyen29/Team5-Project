@@ -7,7 +7,7 @@ import com.example.restaurant.auth.repo.UserRepository;
 import com.example.restaurant.enumList.RequestStatus;
 import com.example.restaurant.enumList.RestStatus;
 import com.example.restaurant.requestOpenClose.dto.CloseViewDto;
-import com.example.restaurant.requestOpenClose.dto.OpenConfirmDto;
+import com.example.restaurant.requestOpenClose.dto.ConfirmDto;
 import com.example.restaurant.requestOpenClose.dto.OpenDto;
 import com.example.restaurant.requestOpenClose.dto.OpenViewDto;
 import com.example.restaurant.requestOpenClose.entity.CloseRequestEntity;
@@ -39,10 +39,18 @@ public class RequestService {
     private final AuthenticationFacade facade;
     private final ImageFileUtils imageFileUtils;
 
-    @Transactional
+  //  @Transactional
     public OpenViewDto openRestaurant(OpenDto dto){
         UserEntity user = facade.extractUser();
+        log.info("loia");
         OpenRequestEntity openRequest = new OpenRequestEntity();
+        log.info("loic");
+        if(restRepository.existsByUser_Id(user.getId())){
+            log.info(user.getRestaurant().toString());
+            log.info("loid");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                    "After 5 days from the date the old store is closed, you are allowed to submit a request.");
+        }
         if(openRepository.existsByStatusAndUser(RequestStatus.PENDING,user)){
             throw new ResponseStatusException(
                     HttpStatus.FORBIDDEN,"User already has a pending request.");
@@ -56,15 +64,18 @@ public class RequestService {
                 user.getUsername()+"idNo", dto.getImageId()
         );
         openRequest.setNameRestaurant(dto.getNameRestaurant());
+        log.info("loi1");
         openRequest.setRestNumber(dto.getRestNumber());
+        log.info("loi2");
         openRequest.setImageRestNumber(pathRestNo);
         openRequest.setOwnerName(dto.getOwnerName());
         openRequest.setOwnerIdNo(dto.getOwnerIdNo());
         openRequest.setImageId(pathIdNo);
+        log.info("loi");
         openRequest.setStatus(RequestStatus.PENDING);
         openRequest.setCreatedAt(LocalDateTime.now());
         openRequest.setUser(user);
-
+        log.info("loi3");
         openRepository.save(openRequest);
         return OpenViewDto.fromEntity(openRequest);
     }
@@ -72,7 +83,7 @@ public class RequestService {
     @Transactional
     public OpenViewDto openConfirm(
             Long openId,
-            OpenConfirmDto dto
+            ConfirmDto dto
             ){
         OpenRequestEntity openRequest = openRepository.findById(openId)
                 .orElseThrow(() ->

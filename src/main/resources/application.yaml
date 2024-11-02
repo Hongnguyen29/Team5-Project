@@ -20,6 +20,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    #  open-in-view: false   #tại sao không có cái này thì chạy như rùa
     database-platform: org.hibernate.community.dialect.SQLiteDialect
     show-sql: true
     defer-datasource-initialization: true
@@ -33,7 +34,3 @@ jwt:
 
 
 
-#config
-logging:
-    level:
-      root: warn

@@ -20,34 +20,18 @@ import java.util.List;
 public class RestaurantController {
     private final RestaurantService restService;
 
-
     @PutMapping("/rest/updateInfo")
-    public ResponseEntity<?> updateInfo(
-            @RequestBody
-            RestaurantDto dto
-    ){
-        try {
-             RestaurantViewDto viewDto = restService.updateInfo(dto);
-            return ResponseEntity.ok( viewDto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+    public ResponseEntity<RestaurantViewDto> updateInfo(@RequestBody RestaurantDto dto) {
+        RestaurantViewDto viewDto = restService.updateInfo(dto);
+        return ResponseEntity.ok(viewDto);
     }
+
     @PutMapping("/rest/updateImg")
-    public ResponseEntity<?> updateInfo(
-            @RequestParam
-            MultipartFile file
-    ){
-        try {
-            RestaurantViewDto dto = restService.updateImage(file);
-            return ResponseEntity.ok(dto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        }
+    public ResponseEntity<RestaurantViewDto> updateImage(@RequestParam MultipartFile file) {
+        RestaurantViewDto dto = restService.updateImage(file);
+        return ResponseEntity.ok(dto);
     }
+
     @GetMapping("/search")
     public ResponseEntity<List<RestaurantViewDto>> searchRestaurants(
             @RequestParam(required = false) String name,
@@ -56,32 +40,16 @@ public class RestaurantController {
         List<RestaurantViewDto> restaurants = restService.searchRestaurants(name, address, category);
         return ResponseEntity.ok(restaurants);
     }
+
     @GetMapping("/restaurant/{restId}")
-    public ResponseEntity<?> viewRestaurant(
-            @PathVariable
-            Long restId
-    ){
-        try {
-            RestaurantViewDto dto = restService.viewRestaurant(restId);
-            return ResponseEntity.ok(dto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        }
+    public ResponseEntity<RestaurantViewDto> viewRestaurant(@PathVariable Long restId) {
+        RestaurantViewDto dto = restService.viewRestaurant(restId);
+        return ResponseEntity.ok(dto);
     }
+
     @GetMapping("/myRestaurant")
-    public ResponseEntity<?> myRestaurant(){
-        try {
-            RestaurantViewDto dto = restService.myRestaurant();
-            return ResponseEntity.ok(dto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        }
+    public ResponseEntity<RestaurantViewDto> myRestaurant() {
+        RestaurantViewDto dto = restService.myRestaurant();
+        return ResponseEntity.ok(dto);
     }
-
-
-
-
-
-
-
 }

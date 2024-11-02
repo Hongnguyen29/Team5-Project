@@ -14,11 +14,10 @@ public class UserDto {
     private String email;
     private String phone;
     private String image;
-    private List<String> role;
+    private String role;
 
     public static UserDto fromEntity(UserEntity entity) {
-        List<String> roles = Arrays.stream(entity.getRole().split(","))
-                .toList();
+        String roles = (entity.getRole().split("_"))[1];
         return UserDto.builder()
                 .id(entity.getId())
                 .username(entity.getUsername())

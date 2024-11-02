@@ -23,100 +23,52 @@ public class MenuController {
 
     @PostMapping("/rest/menu")
     public ResponseEntity<?> addMenu(
-            @ModelAttribute
-            MenuDto dto
-    ){
-        try {
-            MenuViewDto menuViewDto = menuService.addMenu(dto);
-
-            log.info("!!!!!!!!-------" + menuViewDto.toString());
-            return ResponseEntity.ok(menuViewDto);
-        } catch (ResponseStatusException e) {
-            log.info("ccccccccccccccc");
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            log.info("ddddddddddddddd");
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+            @ModelAttribute MenuDto dto
+    ) {
+        MenuViewDto menuViewDto = menuService.addMenu(dto);
+        return ResponseEntity.ok(menuViewDto);
     }
+
     @PutMapping("/rest/menu/{menuId}")
     public ResponseEntity<?> updateMenu(
-            @ModelAttribute
-            MenuDto dto,
-            @PathVariable
-            Long menuId
-    ){
-        try {
-            MenuViewDto menuViewDto = menuService.updateMenu(menuId,dto);
-            return ResponseEntity.ok(menuViewDto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+            @ModelAttribute MenuDto dto,
+            @PathVariable Long menuId
+    ) {
+        MenuViewDto menuViewDto = menuService.updateMenu(menuId, dto);
+        return ResponseEntity.ok(menuViewDto);
     }
+
     @DeleteMapping("/rest/menu/{menuId}")
     public ResponseEntity<String> deleteMenu(
-            @PathVariable
-            Long menuId
-    ){
-        try {
-            String tap = menuService.deleteMenu(menuId);
-            return ResponseEntity.ok(tap);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+            @PathVariable Long menuId
+    ) {
+        String tap = menuService.deleteMenu(menuId);
+        return ResponseEntity.ok(tap);
     }
+
     @GetMapping("/restaurant/menu/{menuId}")
     public ResponseEntity<?> readOneMenu(
-            @PathVariable
-            Long menuId
-    ){
-        try {
-            MenuViewDto viewDto = menuService.readOne(menuId);
-            return ResponseEntity.ok(viewDto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+            @PathVariable Long menuId
+    ) {
+        MenuViewDto viewDto = menuService.readOne(menuId);
+        return ResponseEntity.ok(viewDto);
     }
-    @GetMapping("/restaurant/{restId}/menu")
+
+    @GetMapping("/restaurant/{restId}/menu")  // xem danh sách menu của nhà hàng nào đó ( id) mà không chia trang
     public ResponseEntity<?> readAllMenu(
-            @PathVariable
-            Long restId
-    ){
-        try {
-            List<MenuViewDto> viewDto = menuService.readAll(restId);
-            return ResponseEntity.ok(viewDto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+            @PathVariable Long restId
+    ) {
+        List<MenuViewDto> viewDto = menuService.readAll(restId);
+        return ResponseEntity.ok(viewDto);
     }
-    @GetMapping("/restaurant/1/{restId}")
+
+    @GetMapping("/restaurant/page/{restId}")   //xem danh sách menu của nhà hàng nào đó nhung chia trang
     public ResponseEntity<?> readAllMenu(
             Pageable pageable,
-            @PathVariable
-            Long restId
-    ){
-        try {
-            Page<MenuViewDto> viewDto = menuService.readPage(pageable,restId);
-            return ResponseEntity.ok(viewDto);
-        } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred");
-        }
+            @PathVariable Long restId
+    ) {
+        Page<MenuViewDto> viewDto = menuService.readPage(pageable, restId);
+        return ResponseEntity.ok(viewDto);
     }
 
 }

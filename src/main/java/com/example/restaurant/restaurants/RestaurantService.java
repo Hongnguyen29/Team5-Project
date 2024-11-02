@@ -45,25 +45,34 @@ public class RestaurantService {
     }
 
     public List<RestaurantViewDto> searchRestaurants(String name, String address, Category category) {
+
         Specification<RestaurantEntity> spec = (root, query, criteriaBuilder) -> {
-            Predicate predicate = criteriaBuilder.conjunction();
-            log.info("------------------------");
+            // Kiểm tra nếu tất cả các điều kiện đều rỗng
+            if ((name == null || name.isEmpty()) &&
+                    (address == null || address.isEmpty()) &&
+                    (category == null)) {
+                // Nếu không có điều kiện nào, cho phép hiển thị tất cả các bản ghi
+                return criteriaBuilder.conjunction(); // Hoặc criteriaBuilder.isTrue(), đều cho phép tất cả
+            }
+
+            Predicate predicate = criteriaBuilder.conjunction(); // Bắt đầu với điều kiện mặc định là TRUE (AND)
 
             if (name != null && !name.isEmpty()) {
-                predicate = criteriaBuilder.or(predicate, criteriaBuilder.like(root.get("nameRestaurant"), "%" + name + "%"));
+                predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get("nameRestaurant"), "%" + name + "%"));
             }
             if (address != null && !address.isEmpty()) {
-                predicate = criteriaBuilder.or(predicate, criteriaBuilder.like(root.get("address"), "%" + address + "%"));
+                predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get("address"), "%" + address + "%"));
             }
             if (category != null) {
-                predicate = criteriaBuilder.or(predicate, criteriaBuilder.equal(root.get("category"), category));
+                predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("category"), category));
             }
-            try{
+
+            try {
                 UserEntity user = facade.extractUser();
-                if(!(user.getUsername().equals("admin"))){
-                predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("status"), RestStatus.OPEN));
+                if (!(user.getUsername().equals("admin"))) {
+                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("status"), RestStatus.OPEN));
                 }
-            }catch (Exception e){}
+            } catch (Exception ignored) {}
 
             return predicate;
         };
@@ -134,15 +143,9 @@ public class RestaurantService {
         return RestaurantViewDto.fromEntity(restaurant);
     }
 
-    public Optional<RestaurantEntity> findById(Long id){
-        return restRepository.findById(id);
+    public RestaurantEntity findById(Long id){
+        return restRepository.findById(id).orElseThrow();
     }
-
-
-
-
-
-
 
 
 

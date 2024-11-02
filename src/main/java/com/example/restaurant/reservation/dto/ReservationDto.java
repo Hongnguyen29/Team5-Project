@@ -15,4 +15,6 @@ public class ReservationDto {
     private Integer peopleNumber;
     private String note;
 
+
+
 }
