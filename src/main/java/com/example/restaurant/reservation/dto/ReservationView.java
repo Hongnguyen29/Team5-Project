@@ -21,8 +21,7 @@ import java.time.LocalTime;
 public class ReservationView {
     private Long id;
     private String nameCustom; //
-    private LocalDate date;
-    private LocalTime time;
+    private LocalDateTime time;
     private Integer peopleNumber;
     private String note;
     @Enumerated(EnumType.STRING)
@@ -41,7 +40,6 @@ public class ReservationView {
         return ReservationView.builder()
                 .id(entity.getId())
                 .nameCustom(entity.getNameCustom())
-                .date(entity.getDate())
                 .time(entity.getTime())
                 .peopleNumber(entity.getPeopleNumber())
                 .note(entity.getNote())

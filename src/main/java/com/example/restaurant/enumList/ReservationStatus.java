@@ -6,5 +6,6 @@ public enum ReservationStatus {
     REJECTED,      // Đã từ chối
     CANCELLED,     // Đã hủy
     USED,          // Đã dùng
-    NO_SHOW   // Đã không dùng (khách hàng không tới)
+    NO_SHOW ,  // Đã không dùng (khách hàng không tới)
+    SYSTEM_CANCELLED  // Trạng thái hủy do hệ thống
 }

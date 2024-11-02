@@ -2,6 +2,7 @@ package com.example.restaurant.restaurants.entity;
 
 
 import com.example.restaurant.reservation.entity.ReservationEntity;
+import com.example.restaurant.review.entity.ReviewEntity;
 import com.example.restaurant.support.BaseEntity;
 
 
@@ -53,6 +54,8 @@ public class RestaurantEntity extends BaseEntity {
     @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
     private final List<ReservationEntity> reservation = new ArrayList<>();
 
+    @OneToMany(mappedBy = "restaurant", fetch = FetchType.LAZY)
+    private final List<ReviewEntity> reviews = new ArrayList<>();
 
 
 

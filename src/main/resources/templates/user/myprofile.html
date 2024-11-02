@@ -1,71 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>식당예약시스템</title>
     <!-- Reset Css -->
-     <link rel="stylesheet" href="../../static/assets/css/reset.css">
+    <link rel="stylesheet" href="../../static/assets/css/reset.css" />
 
-     <!-- Style Css -->
-    <link rel="stylesheet" href="../../static/assets/css/myprofile.css">
-<!--    link font-->
-    <link rel="stylesheet" href="../../static/assets/css/font.css">
-    <link rel="stylesheet" href="../../static/icons/themify-icons/themify-icons.css">
-</head>
-<body>
+    <!-- Style Css -->
+    <link rel="stylesheet" href="../../static/assets/css/myprofile.css" />
+    <!--    link font-->
+    <link rel="stylesheet" href="../../static/assets/css/font.css" />
+    <link
+      rel="stylesheet"
+      href="../../static/icons/themify-icons/themify-icons.css"
+    />
+    <link rel="stylesheet" href="../../static/assets/css/3gach.css" />
+  </head>
+  <body>
     <div id="main">
-       <!-- Header -->
-        <header>
-            <div id="header">
-                <div class="nav-btn">
-                    <i class="nav-icon ti-menu"></i>
-                </div>
-                <div class="logo">
-                    <p>Inside Out</p>
-                </div>
-                <ul id="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Log in</a></li>
-                </ul>
-            </div>
-        </header>
-        <!-- Body -->
-        <section class="profile-section">
-            <div class="profile-info">
-                <div class="profile-pic"></div>
-                <div class="profile-details">
-                    <h2>Henry</h2>
-                    <p>Email: insideout@gmail.com</p>
-                    <p>Phone: 010-1234-5678</p>
-                </div>
-            </div>
-    
-            <div class="reservations-reviews">
-                <div class="my-reservation">
-                    <h3>My Reservation</h3>
-                    <div class="reservation-list">
-                        <div class="reservation">식당1<br>24.10.05<br>12:30</div>
-                        <div class="reservation">식당2<br>24.10.06<br>10:00</div>
-                        <div class="reservation">식당6<br>24.10.07<br>14:20</div>
-                        <div class="reservation">식당9<br>24.10.09<br>09:30</div>
-                    </div>
-                </div>
-    
-                <div class="my-review">
-                    <h3>My Review</h3>
-                    <div class="review-list">
-                        <div class="review">식당1<br>24.10.05<br><span class="stars">★★★★★</span></div>
-                        <div class="review">식당6<br>24.10.07<br><span class="stars">★★★★☆</span></div>
-                        <div class="review">식당9<br>24.10.09<br><span class="stars">★★☆☆☆</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <div id="footer">
-            <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      <!-- Header -->
+      <header>
+        <div id="header">
+          <!-- Nút hamburger -->
+          <div class="hamburger" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+
+          <!-- Menu ẩn -->
+          <div class="menu" id="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="logo">
+            <p>Inside Out</p>
+          </div>
+          <ul id="nav">
+            <li><a href="/view/home">Home</a></li>
+            <li><a href="/view/login">Log in</a></li>
+          </ul>
         </div>
+      </header>
+      <!-- Body -->
+      <section class="profile-section">
+        <div class="profile-info">
+          <div class="avatar-container">
+            <img src="path/to/avatar.jpg" alt="Avatar" class="avatar" />
+          </div>
+          <div class="profile-details">
+            <h2 id="username"></h2>
+            <p id="email"></p>
+            <p id="phone"></p>
+            <p id="role"></p>
+          </div>
+        </div>
+
+        
+        <div class="reservations-reviews">
+          <div class="my-reservation">
+            <div id="reservation" class="reservation-list" ></div>
+
+          </div>
+
+        <div class="reservations-reviews">
+          <div class="my-reservation">
+            <h3>My Reservation</h3>
+            <div class="reservation-list" id="reservation-">
+              <div class="reservation">식당1<br />24.10.05<br />12:30</div>
+              <div class="reservation">식당2<br />24.10.06<br />10:00</div>
+              <div class="reservation">식당6<br />24.10.07<br />14:20</div>
+              <div class="reservation">식당9<br />24.10.09<br />09:30</div>
+            </div>
+          </div>
+
+          <div class="my-review">
+            <h3>My Review</h3>
+            <div class="review-list">
+              <div class="review">
+                식당1<br />24.10.05<br /><span class="stars">★★★★★</span>
+              </div>
+              <div class="review">
+                식당6<br />24.10.07<br /><span class="stars">★★★★☆</span>
+              </div>
+              <div class="review">
+                식당9<br />24.10.09<br /><span class="stars">★★☆☆☆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="footer">
+        <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      </div>
     </div>
-</body>
+    <script src="/static/js/user/myprofile.js"></script>
+  </body>
 </html>

@@ -3,7 +3,7 @@ package com.example.restaurant.requestOpenClose.dto;
 import lombok.Getter;
 
 @Getter
-public class OpenConfirmDto {
+public class ConfirmDto {
     private boolean approved;
     private String reason;
 }

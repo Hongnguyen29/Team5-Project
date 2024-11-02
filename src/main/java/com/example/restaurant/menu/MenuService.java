@@ -52,17 +52,8 @@ public class MenuService {
                 .restaurant(restaurant)
                 .build();
         menuRepository.save(menu);
-        log.info("--------------------------0-----------------");
-
-        //List<MenuEntity> menus = restaurant1.getMenus();
-        log.info("----------------------------------1----------");
-        // log.info(menus.toString());
-    //    menus.add(menu);
-        log.info("--------------------------------------------");
-        //log.info(menus.toString());
         restaurantRepository.save(restaurant);
-        MenuViewDto dto1 = MenuViewDto.fromEntity(menu);
-        return dto1;
+        return MenuViewDto.fromEntity(menu);
     }
 
     @Transactional

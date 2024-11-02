@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../static/assets/css/styles.css">
 </head>
 <body>
+=======
+    <link rel="stylesheet" href="../static/assets/css/styles.css" />
+  </head>
+  <body>
+>>>>>>> 74356dbe3a02d5e771e3bc643d9ca5aa2feee60c
     <div id="main">
-        <div id="header">
-            <div class="nav-btn">
-                <i class="nav-icon ti-menu"></i>
-            </div>
-            <div class="logo">
-                <p>Inside Out</p>
-            </div>
-            <ul id="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="signup.html">SIGN UP</a></li>
-            </ul>
+      <div id="header">
+        <div class="nav-btn">
+          <i class="nav-icon ti-menu"></i>
         </div>
+<<<<<<< HEAD
         <div class="login-box">
             <form class="login-form" action="/submit-form">
                <h1>Welcome</h1>
@@ -37,7 +36,56 @@
         </div>
         <div id="footer">
             <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+=======
+        <div class="logo">
+          <p>Inside Out</p>
+>>>>>>> 74356dbe3a02d5e771e3bc643d9ca5aa2feee60c
         </div>
+        <ul id="nav">
+          <li><a href="/view/home">Home</a></li>
+          <li><a href="/view/signup">SIGNUP</a></li>
+        </ul>
+      </div>
+      <div class="login-box">
+        <form id="login-form" action="/submit-form">
+          <h1>Welcome</h1>
+          <h2>log in to your account</h2>
+
+          <input
+            type="text"
+            id="username-input"
+            class="form-control"
+            required
+          />
+
+          <input
+            type="password"
+            class="form-control"
+            id="password-input"
+            required
+          />
+
+          <button class="login-btn">Login</button>
+          <h5>Or login with:</h5>
+          <div>
+            <img
+              class="kakao-img"
+              src="assets/img/ka-na-icon/kakao-con.png"
+              alt=""
+            />
+            <img
+              class="naver-img"
+              src="assets/img/ka-na-icon/naver-icon.png"
+              alt=""
+            />
+          </div>
+          <p>Don't have accout? <a>Sign up</a></p>
+        </form>
+      </div>
+      <div id="footer">
+        <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      </div>
     </div>
-</body>
+    <script src="/static/js/login.js"></script>
+  </body>
 </html>
