@@ -24,14 +24,10 @@ public class WebSecurityConfig {
     ) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
-<<<<<<< HEAD
                     auth.requestMatchers("view/**").permitAll();
-                    auth.requestMatchers("/","static/**","/category"
-=======
                     auth.requestMatchers("/","static/**","/category",
                             "/restaurant/{restId}",
                             "/search"
->>>>>>> 9a0a46d (restaurant)
                     ).permitAll();
 
                     auth.requestMatchers("/login",
