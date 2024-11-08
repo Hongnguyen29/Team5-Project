@@ -61,12 +61,14 @@ public class UserService {
         } catch (UsernameNotFoundException ex) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Username not found.");
         }
+        log.info(userDetails.getUsername());
         if(!passwordEncoder.matches(
                 requestDto.getPassword(), userDetails.getPassword()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Incorrect password !");
         String jwt = jwtTokenUtils.generateToken(userDetails);
         JwtResponseDto responseDto = new JwtResponseDto();
         responseDto.setToken(jwt);
+
         return responseDto;
     }
     public UserDto profile(){
