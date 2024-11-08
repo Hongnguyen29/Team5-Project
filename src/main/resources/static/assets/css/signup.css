@@ -1,0 +1,101 @@
+/* Chỉnh sửa cho toàn bộ phần đăng ký */
+#content {
+  max-width: 400px; /* Giảm chiều rộng tối đa của form */
+  margin: 0 auto; /* Căn giữa form */
+  padding: 20px; /* Giảm khoảng cách xung quanh form */
+  background-color: #fff; /* Màu nền của form */
+  border-radius: 8px; /* Bo tròn góc nhẹ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho form */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Tiêu đề form */
+.signup-form h1 {
+  font-size: 30px; /* Giảm kích thước chữ của tiêu đề chính */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.signup-form h2 {
+  font-size: 16px; /* Giảm kích thước chữ của tiêu đề phụ */
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Định dạng cho các input */
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="email"],
+.signup-form input[type="tel"] {
+  width: 100%; /* Chiều rộng đầy đủ */
+  padding: 10px 12px; /* Giảm khoảng cách trong input */
+  margin: 8px 0; /* Giảm khoảng cách giữa các input */
+  border: 1px solid #ccc; /* Viền của input */
+  border-radius: 5px; /* Bo tròn góc của input */
+  font-size: 14px; /* Giảm kích thước chữ trong input */
+  background-color: #f9f9f9; /* Màu nền nhẹ */
+  transition: border-color 0.3s; /* Hiệu ứng chuyển màu khi focus vào input */
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="password"]:focus,
+.signup-form input[type="email"]:focus,
+.signup-form input[type="tel"]:focus {
+  border-color: #fad02c; /* Màu viền khi focus */
+  outline: none; /* Loại bỏ outline mặc định */
+}
+
+/* Định dạng cho checkbox */
+.signup-form input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Nút đăng ký */
+.signup-btn {
+  width: 100%;
+  padding: 10px; /* Giảm chiều cao nút */
+  background-color: #fad02c; /* Màu nền nút */
+  color: white; /* Màu chữ trên nút */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; /* Giảm kích thước chữ trên nút */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #e0c117; /* Màu nền khi hover */
+}
+
+/* Liên kết tới trang login */
+.signup-form p {
+  margin-top: 10px;
+  font-size: 14px; /* Giảm kích thước chữ của liên kết */
+  color: #555;
+}
+
+.signup-form a {
+  color: #fad02c;
+  text-decoration: none;
+}
+
+.signup-form a:hover {
+  text-decoration: underline;
+}
+
+/* Đảm bảo form không bị tràn lề ở các thiết bị nhỏ */
+@media (max-width: 600px) {
+  #content {
+    padding: 15px; /* Giảm padding cho màn hình nhỏ */
+    width: 90%; /* Đảm bảo form chiếm 90% chiều rộng màn hình */
+  }
+
+  .signup-form h1 {
+    font-size: 28px; /* Giảm kích thước chữ */
+  }
+
+  .signup-form h2 {
+    font-size: 14px; /* Giảm kích thước chữ */
+  }
+}

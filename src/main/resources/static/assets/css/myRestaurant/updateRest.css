@@ -1,0 +1,158 @@
+/* Profile Section */
+.profile-section {
+  padding: 20px 0; /* Giảm padding */
+}
+
+.container {
+  max-width: 900px; /* Giảm chiều rộng tối đa của container */
+  margin: 0 auto;
+}
+
+/* Restaurant Details */
+.res-details {
+  display: flex;
+  gap: 20px; /* Giảm khoảng cách giữa các phần tử */
+  align-items: center;
+}
+
+.res-img {
+  width: 200px; /* Giảm kích thước ảnh */
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px; /* Giảm độ bo góc */
+}
+
+.res-body {
+  flex: 1;
+}
+
+.res-body h3 {
+  font-size: 22px; /* Giảm kích thước font */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.res-body p {
+  font-size: 14px; /* Giảm kích thước font */
+  margin: 5px 0;
+}
+
+.res-body strong {
+  font-weight: bold;
+  color: #2c0cac;
+}
+
+/* Update Restaurant Section */
+.update-restaurant-section {
+  max-width: 35%; /* Giảm chiều rộng của phần nhập dữ liệu */
+  margin: 0px auto;
+}
+
+.update-restaurant-section h2 {
+  font-size: 20px; /* Giảm kích thước font */
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Form Styles */
+form {
+  background-color: #fff;
+  padding: 16px; /* Giảm padding */
+  border-radius: 6px; /* Giảm độ bo góc */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-size: 14px; /* Giảm kích thước font */
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px; /* Giảm padding */
+  font-size: 12px; /* Giảm kích thước font */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Giảm độ bo góc */
+  margin-bottom: 16px; /* Giảm margin */
+}
+
+form input[type="time"] {
+  padding: 8px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  background-color: #1a73e8;
+  color: #fff;
+  padding: 8px 7px; /* Giảm padding */
+  font-size: 14px; /* Giảm kích thước font */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 18%; /* Giảm chiều rộng button */
+  display: block;
+  margin: 16px auto; /* Giảm khoảng cách */
+}
+
+form button:hover {
+  background-color: #1558b3;
+}
+
+/* Image Section */
+.img-section {
+  padding: 20px 0; /* Giảm padding */
+  max-width: 35%; /* Giảm chiều rộng của phần ảnh */
+  margin: 0 auto;
+}
+
+.img-section h2 {
+  font-size: 20px; /* Giảm kích thước font */
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* Image Preview Container */
+#image-preview {
+  width: 100%;
+  max-width: 200px; /* Giảm chiều rộng ảnh */
+  aspect-ratio: 4 / 5; /* Giữ tỷ lệ ảnh */
+  object-fit: cover;
+  border-radius: 6px; /* Giảm độ bo góc */
+  margin-bottom: 16px;
+}
+
+/* File Input for Image Upload */
+form .form-label {
+  font-size: 14px; /* Giảm kích thước font */
+  color: #555;
+}
+
+form .form-control {
+  padding: 8px;
+  font-size: 14px; /* Giảm kích thước font */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Giảm độ bo góc */
+}
+
+.btn {
+  padding: 8px 7px; /* Giảm padding */
+  background-color: #1a73e8;
+  color: #fff;
+  font-size: 14px; /* Giảm kích thước font */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1558b3;
+}

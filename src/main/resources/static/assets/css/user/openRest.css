@@ -1,0 +1,85 @@
+#content .res-list {
+  background-color: #fff;
+}
+#content {
+}
+.form-section {
+  background-color: #e0e0e0;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding-top: 50px;
+}
+
+.form-section h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  flex-basis: 30%;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  width: 65%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+Button Group Styles .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-group button {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #909090;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #909090;
+  color: white;
+}
+
+#footer {
+  /* clear: both; */
+  width: 100%;
+  height: 46px;
+  background-color: #000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  text-align: center;
+}
+
+#footer p {
+  font-size: 24px;
+  line-height: 46px;
+}

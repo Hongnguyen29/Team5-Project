@@ -1,0 +1,103 @@
+/* Container chính */
+.container {
+  max-width: 700px;
+  margin: 0 auto; /* Căn giữa container */
+  background-color: #fff; /* Màu nền trắng */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+/* Tiêu đề chính */
+.container h1 {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Các phần mục trong biểu mẫu */
+.section {
+  margin-bottom: 30px;
+}
+
+/* Tiêu đề của từng phần mục */
+.section h2 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 400;
+  border-bottom: 2px solid #1a73e8; /* Đường viền dưới màu xanh */
+  padding-bottom: 8px;
+  text-transform: uppercase;
+}
+
+/* Nội dung của từng phần mục */
+.section p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+/* Danh sách mục */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+ul li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Checkbox đồng ý */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+label[for="agree"] {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* Textarea cho lý do đóng cửa */
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical; /* Cho phép thay đổi kích thước chiều cao */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Nút submit */
+button {
+  background-color: #1a73e8;
+  color: white;
+  font-size: 15px;
+  padding: 15px 20px;
+  width: 30%;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block; /* Thay đổi display của button thành block */
+  margin: 0 auto; /* Căn giữa nút trong phần tử cha */
+}
+button:hover {
+  background-color: #1558b3; /* Đổi màu khi hover */
+}
+
+button:disabled {
+  background-color: #ccc; /* Màu khi button bị vô hiệu hóa */
+  cursor: not-allowed;
+}

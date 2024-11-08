@@ -102,6 +102,7 @@ public class RequestService {
                     .restNumber(openRequest.getRestNumber())
                     .ownerName(openRequest.getOwnerName())
                     .ownerIdNo(openRequest.getOwnerIdNo())
+                    .restImage("/static/assets/img/rest-avatar.png")
                     .status(RestStatus.PREPARING)
                     .user(openRequest.getUser())
                     .build();
@@ -184,13 +185,14 @@ public class RequestService {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,"Please check the reason");
         }
+        log.info("loi service");
         CloseRequestEntity closeRequest = new CloseRequestEntity();
         closeRequest.setReason(reason);
         closeRequest.setCreatedAt(LocalDateTime.now());
         closeRequest.setStatus(RequestStatus.PENDING);
         closeRequest.setRestaurant(restaurant);
         closeRepository.save(closeRequest);
-
+        log.info("loi service2");
         return CloseViewDto.fromEntity(closeRequest);
 
     }
@@ -240,7 +242,10 @@ public class RequestService {
             for ( CloseRequestEntity o : closeList){
                 viewDtoList.add(CloseViewDto.fromEntity(o));
             }
+            log.info("s1");
+            log.info(closeList.toString());
         }
+
         else {
             List<CloseRequestEntity> closeList = closeRepository.findByStatusOrderByCreatedAtDesc(status);
             for ( CloseRequestEntity o : closeList){

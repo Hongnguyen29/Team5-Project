@@ -1,0 +1,29 @@
+/* Container cho nav */
+#nav {
+  display: flex; /* Dùng Flexbox để các phần tử con nằm cùng hàng */
+  justify-content: flex-start; /* Căn các phần tử con về phía trái */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  padding: 0;
+  margin: 0;
+}
+
+/* Phần avatar và username */
+#nav-profile {
+  display: flex; /* Căn chỉnh avatar và username theo hàng ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-right: 20px; /* Khoảng cách giữa avatar và các liên kết */
+}
+
+/* Ảnh đại diện */
+#nav-profile .avatar-img {
+  width: 30px; /* Kích thước ảnh đại diện */
+  height: 30px; /* Kích thước ảnh đại diện */
+  border-radius: 50%; /* Làm ảnh thành hình tròn */
+  margin-right: 10px; /* Khoảng cách giữa ảnh và tên */
+}
+
+/* Tên người dùng */
+#nav-profile .username {
+  font-size: 14px; /* Kích thước chữ của username */
+  color: #333; /* Màu chữ */
+}

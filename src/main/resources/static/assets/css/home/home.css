@@ -1,0 +1,102 @@
+/* Container chứa các phần tử .res-item */
+.res-list {
+  display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử theo chiều ngang */
+  flex-wrap: wrap; /* Cho phép các phần tử xuống dòng khi không đủ không gian */
+  justify-content: space-around; /* Căn giữa các phần tử và tạo khoảng cách đều giữa các phần tử */
+  gap: 20px; /* Khoảng cách giữa các phần tử */
+  padding: 20px; /* Khoảng cách xung quanh container */
+}
+
+/* Phần tử .res-item */
+.res-item {
+  width: 14%; /* Đặt chiều rộng phần tử sao cho có thể chứa 5 phần tử trên một hàng */
+  background-color: #fff; /* Màu nền của phần tử là trắng */
+  border-radius: 10px; /* Bo tròn các góc của phần tử */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ cho phần tử */
+  padding: 5px; /* Khoảng cách bên trong phần tử */
+  text-align: center; /* Căn giữa nội dung trong phần tử */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động và bóng đổ khi hover */
+}
+
+/* Hiệu ứng khi hover trên .res-item */
+.res-item:hover {
+  transform: translateY(-10px); /* Khi hover, phần tử sẽ di chuyển lên 10px */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Tăng độ đậm của bóng đổ khi hover */
+}
+
+/* Ảnh trong .res-item */
+.res-img {
+  width: 100%; /* Ảnh sẽ chiếm toàn bộ chiều rộng của phần tử chứa */
+  height: 150px; /* Đặt chiều cao cố định cho ảnh */
+  object-fit: cover; /* Cắt ảnh sao cho phù hợp với vùng chứa mà không bị méo */
+  border-radius: 10px; /* Bo tròn các góc của ảnh */
+  margin-bottom: 10px; /* Khoảng cách giữa ảnh và nội dung bên dưới */
+}
+
+/* Nội dung phần thân của phần tử .res-item */
+.res-body {
+  padding: 5px 0; /* Khoảng cách trên và dưới trong phần thân */
+}
+
+/* Tiêu đề trong phần thân .res-item */
+.res-body h3 {
+  font-size: 18px; /* Kích thước chữ cho tiêu đề */
+  font-weight: bold; /* Chữ đậm */
+  margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Mô tả trong phần thân .res-item */
+.res-body p {
+  font-size: 13px; /* Kích thước chữ cho mô tả */
+  color: black; /* Màu chữ xám cho dễ đọc */
+  margin-bottom: 5px; /* Khoảng cách dưới đoạn mô tả */
+}
+
+/* Nút đặt chỗ */
+.js-reservation {
+  display: inline-block; /* Đặt nút thành phần hiển thị inline-block */
+  background-color: gold; /* Màu nền của nút là vàng nhạt */
+  color: black; /* Màu chữ trắng */
+  padding: 8px 15px; /* Khoảng cách bên trong nút */
+  border-radius: 5px; /* Bo tròn các góc của nút */
+  font-size: 14px; /* Kích thước chữ của nút */
+  text-decoration: none; /* Bỏ gạch chân nếu nút là liên kết */
+  margin-top: 10px; /* Khoảng cách trên của nút */
+  transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu nền khi hover */
+}
+
+/* Hiệu ứng hover trên nút .js-reservation */
+.js-reservation:hover {
+  background-color: #e7b63d; /* Màu nền nút chuyển sang vàng đậm khi hover */
+  cursor: pointer; /* Thay đổi con trỏ thành bàn tay khi hover */
+}
+
+/* Container cho thanh điều hướng */
+#nav {
+  display: flex; /* Sử dụng flexbox để các phần tử con nằm trong một hàng ngang */
+  justify-content: flex-start; /* Căn các phần tử con về phía bên trái */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  padding: 0; /* Bỏ padding mặc định của container */
+  margin: 0; /* Bỏ margin mặc định của container */
+}
+
+/* Phần avatar và username trong navbar */
+#nav-profile {
+  display: flex; /* Sử dụng flexbox để căn chỉnh avatar và username theo hàng ngang */
+  align-items: center; /* Căn giữa avatar và username theo chiều dọc */
+  margin-right: 20px; /* Khoảng cách giữa avatar và các phần tử bên phải */
+}
+
+/* Ảnh đại diện trong navbar */
+#nav-profile .avatar-img {
+  width: 30px; /* Đặt kích thước ảnh đại diện */
+  height: 30px; /* Đặt chiều cao ảnh đại diện */
+  border-radius: 50%; /* Làm cho ảnh thành hình tròn */
+  margin-right: 10px; /* Khoảng cách giữa ảnh đại diện và tên người dùng */
+}
+
+/* Tên người dùng trong navbar */
+#nav-profile .username {
+  font-size: 14px; /* Kích thước chữ cho tên người dùng */
+  color: #333; /* Màu chữ xám tối cho tên người dùng */
+}

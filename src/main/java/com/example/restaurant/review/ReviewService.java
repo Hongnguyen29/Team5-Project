@@ -42,24 +42,42 @@ public class ReviewService {
             throw new ResponseStatusException(HttpStatus.FORBIDDEN,
                     "This operation cannot be performed.");
         }
+        log.info("loi1");
         String path = fileUtils.saveFile(String.format(
-                "review/%d/",user.getId()),
-                "reservation",
+                "review/%d/",reservationId),
+                ("reservation"),
                 dto.getImage()
                 );
+        log.info("loi2");
+        ReviewEntity review1 = ReviewEntity.builder()
+                .content(dto.getContent())
+                .star(dto.getStar())
+                .image(path)
+                .timeCreate(LocalDateTime.now())
+                .restaurant(reservation.getRestaurant())
+                .reservation(reservation)
+                .build();
+
+
         ReviewEntity review = new ReviewEntity();
         review.setContent(dto.getContent());
+        log.info("loi3");
+
         review.setStar(dto.getStar());
         review.setImage(path);
         review.setTimeCreate(LocalDateTime.now());
         review.setRestaurant(reservation.getRestaurant());
         review.setUser(user);
         review.setReservation(reservation);
-
+        log.info("loi4");
         reviewRepository.save(review);
-
+        log.info("loi5");
         return ReviewViewDto.fromEntity(review);
     }
+
+
+
+
     @Transactional
     public ReviewViewDto update(ReviewDto dto, Long reviewId){
         UserEntity user = facade.extractUser();
@@ -74,7 +92,7 @@ public class ReviewService {
         }
         log.info("loi 3");
         String path = fileUtils.saveFile(String.format(
-                        "review/%d/",user.getId()),
+                        "review/%d/",review.getReservation().getId()),
                 "reservation",
                 dto.getImage()
         );
@@ -118,6 +136,7 @@ public class ReviewService {
     public List<ReviewViewDto> getAllRestaurant(Long restId){
         List<ReviewEntity> reviewEntities = reviewRepository
                 .findByRestaurantIdOrderByTimeCreateDesc(restId);
+        log.info("loi service");
         return reviewEntities.stream()
                 .map(ReviewViewDto::fromEntity)
                 .toList();

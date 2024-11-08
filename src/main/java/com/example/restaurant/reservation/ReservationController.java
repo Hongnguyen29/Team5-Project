@@ -28,6 +28,7 @@ public class ReservationController {
             @RequestBody ReservationDto dto,
             @PathVariable Long restId) {
         ReservationView reservationView = reservationService.createReservation(dto, restId);
+        log.info("controller");
         return ResponseEntity.ok(reservationView);
     }
     @GetMapping("/auth/reservation/{reservationId}")
