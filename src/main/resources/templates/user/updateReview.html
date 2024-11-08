@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Reservation System</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="../../static/assets/css/reset.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../../static/assets/css/share.css" />
+
+    <link
+      rel="stylesheet"
+      href="../../static/assets/css/user/updateReview.css"
+    />
+
+    <link rel="stylesheet" href="../../static/assets/css/user/linkuser.css" />
+
+    <!-- Liên kết file CSS -->
+  </head>
+  <body>
+    <div id="main">
+      <!-- Header -->
+      <header>
+        <div id="header">
+          <div class="logo">
+            <p>Inside Out</p>
+          </div>
+          <ul id="nav"></ul>
+        </div>
+      </header>
+      <!-- Body -->
+
+      <!-- Phần tử container để hiển thị các review -->
+      <div class="form-container">
+        <h1>Update Review</h1>
+        <form id="reviewForm" enctype="multipart/form-data">
+          <!-- Chọn số sao -->
+          <div class="form-group">
+            <label for="star">Star :</label>
+            <select id="star" name="star" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <!-- Nội dung đánh giá -->
+          <div class="form-group">
+            <label for="content">Content :</label>
+            <textarea id="content" name="content" required></textarea>
+          </div>
+
+          <!-- Chọn ảnh -->
+          <div class="form-group">
+            <label for="image">Image (optional)</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+          </div>
+
+          <!-- Nút gửi -->
+          <div class="form-group">
+            <button type="submit">Submit
+          </div>
+
+          <!-- Thông báo lỗi -->
+          <div class="error-message" id="error-message"></div>
+        </form>
+      </div>
+      <ul id="nav-links"></ul>
+      <div id="footer">
+        <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      </div>
+    </div>
+    <script src="/static/js/user/updateReview.js"></script>
+    <script src="/static/js/user/linkuser.js"></script>
+  </body>
+</html>

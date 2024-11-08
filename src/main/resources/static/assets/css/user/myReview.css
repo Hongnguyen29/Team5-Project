@@ -1,0 +1,110 @@
+/* Định dạng chung */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container chứa các đánh giá */
+#reviewContainer {
+  margin: 20px;
+  max-width: 900px; /* Tăng chiều rộng tối đa của container */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Định dạng mỗi review */
+.review-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Đảm bảo chiều rộng của mỗi review chiếm toàn bộ container */
+  max-width: 700px; /* Tăng chiều rộng tối đa cho mỗi review */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Định dạng ảnh review */
+.review-image {
+  width: 4cm; /* Đặt chiều rộng của ảnh */
+  height: 5cm; /* Đặt chiều cao của ảnh */
+  object-fit: contain; /* Đảm bảo ảnh giữ tỷ lệ gốc mà không bị cắt */
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Định dạng thông tin review */
+.review-info {
+  margin-bottom: 10px;
+}
+
+.review-info h3 {
+  font-size: 1.4em; /* Giữ kích thước tiêu đề sao */
+  color: #f39c12; /* Màu vàng cho sao */
+}
+
+.review-info .star {
+  margin-right: 5px;
+}
+
+/* Định dạng chung cho nút */
+.review-actions button,
+.review-actions .update-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f39c12;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none; /* Loại bỏ gạch dưới của thẻ <a> */
+  display: inline-block; /* Đảm bảo thẻ <a> và <button> có kiểu hiển thị giống nhau */
+  text-align: center; /* Căn giữa văn bản trong thẻ */
+  transition: background-color 0.3s ease;
+}
+
+/* Đổi màu khi hover */
+.review-actions button:hover,
+.review-actions .update-btn:hover {
+  background-color: #e67e22;
+}
+
+/* Khi hover trên thẻ <a>, vẫn có hiệu ứng như nút button */
+.review-actions .update-btn:hover {
+  background-color: #e67e22;
+}
+
+/* Đảm bảo thẻ <a> không bị gạch dưới */
+.review-actions .update-btn {
+  text-decoration: none;
+}
+
+/* Định dạng các thông tin khác */
+.user {
+  font-size: 1.2em; /* Giữ kích thước font cho tên người dùng */
+  font-weight: bold;
+}
+
+.time {
+  font-size: 0.9em; /* Giảm kích thước font cho thời gian */
+  color: #666;
+  margin-left: 10px;
+}
+
+.status {
+  font-size: 1.2em; /* Giữ kích thước nội dung đánh giá */
+  color: #333;
+  margin-top: 10px;
+}
+
+.restaurant-name {
+  font-size: 1.1em; /* Giữ kích thước font cho tên nhà hàng */
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+}

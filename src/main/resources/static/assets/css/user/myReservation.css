@@ -1,0 +1,89 @@
+/* Mỗi mục đặt chỗ */
+.reservation-item {
+  width: 40%;
+  background-color: #f9f9f9; /* Màu nền sáng */
+  padding: 20px;
+  margin: 10px auto; /* Tự động canh giữa */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
+  font-size: 13px; /* Cỡ chữ 13px */
+  line-height: 0.2; /* Khoảng cách giữa các dòng */
+  color: black; /* Màu chữ chính */
+}
+
+.reservation-item h4 {
+  font-size: 18px; /* Cỡ chữ tiêu đề */
+  margin-bottom: 10px;
+  color: #1a73e8; /* Màu tiêu đề là màu xanh dương */
+}
+
+.reservation-item p {
+  margin: 5px 0;
+}
+
+.reservation-item strong {
+  font-weight: bold;
+  color: black; /* Màu chữ nhạt hơn cho nhãn */
+}
+/* Nút hủy */
+.reservation-item button {
+  background-color: #e74c3c; /* Màu đỏ cho nút hủy */
+  color: #fff;
+  border: none;
+  padding: 6px 14px; /* Điều chỉnh padding nhỏ hơn để nút nhỏ hơn */
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  margin-top: 10px; /* Khoảng cách giữa nút và các nội dung phía trên */
+  display: block; /* Đảm bảo nút chiếm 100% chiều rộng của phần tử chứa */
+  width: 30%; /* Nút nhỏ hơn một chút và căn giữa */
+  margin-left: auto; /* Căn giữa nút */
+  margin-right: auto; /* Căn giữa nút */
+  text-align: center; /* Căn giữa chữ trong nút */
+}
+
+/* Khi hover trên nút */
+.reservation-item button:hover {
+  background-color: #c0392b; /* Đổi màu nền thành màu đỏ đậm khi hover */
+  transform: translateY(-2px); /* Hiệu ứng di chuyển nhẹ khi hover */
+}
+
+/* Khi nút được focus */
+.reservation-item button:focus {
+  outline: none; /* Loại bỏ viền mặc định khi nút được focus */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ nhẹ khi focus */
+}
+
+/* Hiển thị thông báo nếu không có đặt chỗ */
+#reservationContainer p {
+  font-size: 13px;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Thêm hiệu ứng hover nhẹ cho button khi được focus */
+.reservation-item button:focus {
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Đặt nền trang nhẹ nhàng */
+body {
+  background-color: #ecf0f1;
+}
+
+/* Responsive design: Chuyển sang 1 cột khi màn hình nhỏ */
+@media (max-width: 768px) {
+  #reservationContainer {
+    grid-template-columns: 1fr; /* Chuyển sang 1 cột khi màn hình nhỏ */
+  }
+  .reservation-item {
+    width: 100%; /* Đảm bảo các mục chiếm hết chiều rộng */
+  }
+  .reservation-item button {
+    width: 100%; /* Nút chiếm hết chiều rộng khi màn hình nhỏ */
+  }
+}

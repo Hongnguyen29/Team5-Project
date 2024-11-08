@@ -1,5 +1,7 @@
 package com.example.restaurant.review.dto;
 
+import com.example.restaurant.reservation.entity.ReservationEntity;
+import com.example.restaurant.restaurants.entity.RestaurantEntity;
 import com.example.restaurant.review.entity.ReviewEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +22,8 @@ public class ReviewViewDto {
     private String image;
     private LocalDateTime timeCreate;
 
+    private String restaurantName;
+    private Long restaurantId;
     private String username;
 
     public static ReviewViewDto fromEntity(ReviewEntity entity){
@@ -31,6 +35,8 @@ public class ReviewViewDto {
                 .image(entity.getImage())
                 .timeCreate(entity.getTimeCreate())
                 .username((entity.getUser().getUsername()).substring(0,4) + "****")
+                .restaurantName(entity.getRestaurant().getNameRestaurant())
+                .restaurantId(entity.getRestaurant().getId())
 
 
                 .build();

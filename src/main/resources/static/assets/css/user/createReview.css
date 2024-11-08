@@ -1,0 +1,78 @@
+/* Container chứa form */
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Giới hạn chiều rộng container */
+}
+
+/* Tiêu đề form */
+.form-container h1 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+/* Định dạng nhóm các trường trong form */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Định dạng các nhãn label */
+.form-group label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Định dạng các trường nhập liệu */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Định dạng cho textarea */
+.form-group textarea {
+  resize: vertical;
+  height: 100px; /* Chiều cao textarea */
+}
+
+/* Định dạng cho input[type="file"] */
+.form-group input[type="file"] {
+  padding: 0;
+}
+
+/* Định dạng nút submit */
+.form-group button {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.form-group button:hover {
+  background-color: #e67e22;
+}
+
+/* Thông báo lỗi */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 10px;
+}

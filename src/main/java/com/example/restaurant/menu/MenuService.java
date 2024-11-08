@@ -40,17 +40,27 @@ public class MenuService {
    /*     RestaurantEntity restaurant1 =
                 restaurantRepository.resMenus(restaurant.getId()).orElseThrow();*/
         checkShopStatus(restaurant.getId());
-        String path = imageFileUtils.saveFile(
-                String.format("restaurant/%d/", restaurant.getId()),
-                dto.getNameFood() + "menu", dto.getFile()
-        );
+
+
+
         MenuEntity menu = MenuEntity.builder()
                 .restaurant(restaurant)
                 .nameFood(dto.getNameFood())
                 .price(dto.getPrice())
-                .image(path)
                 .restaurant(restaurant)
                 .build();
+        if(dto.getFile() == null ) {
+            menu.setImage("/static/assets/img/food.png");
+            menuRepository.save(menu);
+            restaurantRepository.save(restaurant);
+            return MenuViewDto.fromEntity(menu);
+        }
+            String path = imageFileUtils.saveFile(
+                    String.format("restaurant/%d/", restaurant.getId()),
+                    dto.getNameFood() + "menu", dto.getFile()
+            );
+            menu.setImage(path);
+
         menuRepository.save(menu);
         restaurantRepository.save(restaurant);
         return MenuViewDto.fromEntity(menu);

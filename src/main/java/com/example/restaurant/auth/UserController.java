@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @RestController
 @Slf4j
 @RequiredArgsConstructor
@@ -49,5 +51,11 @@ public class UserController {
     public ResponseEntity<String> updatePass(@RequestBody Passwordto dto) {
         userService.updatePass(dto);
         return ResponseEntity.ok("Password changed successfully.");
+    }
+
+    @GetMapping("/admin/users")
+    public ResponseEntity<List<UserDto>> allUser() {
+        List<UserDto> dtoList = userService.allUsers();
+        return ResponseEntity.ok(dtoList);
     }
 }

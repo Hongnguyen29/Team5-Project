@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.res-details {
+  display: flex;
+  align-items: flex-start;
+  border-top: 2px solid #fad02c;
+  padding-top: 20px;
+}
+
+.res-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-right: 20px;
+}
+
+.res-body {
+  flex: 1;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-item {
+  display: flex;
+  justify-content: space-between; /* Căn giữa thông tin và hình ảnh */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(100% - 10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 10px; /* Thêm khoảng cách bên trong */
+  margin-bottom: 15px; /* Khoảng cách giữa các đánh giá */
+}
+
+.review-image {
+  width: 90px; /* Chiều rộng của hình ảnh */
+  height: auto; /* Chiều cao tự động để giữ tỷ lệ */
+  border-radius: 8px; /* Bo góc cho hình ảnh */
+}
+
+.review-info {
+  flex-grow: 1; /* Để phần thông tin chiếm không gian còn lại */
+  padding-right: 10px; /* Khoảng cách bên phải */
+}
+
+.review-info h3 {
+  margin: 0; /* Bỏ margin cho tiêu đề */
+  font-size: 1.5em; /* Kích thước font của tiêu đề lớn hơn và in đậm */
+  color: #007bff; /* Màu xanh cho tiêu đề menu */
+  font-weight: bold; /* In đậm tiêu đề */
+  display: flex; /* Để hiển thị sao trên cùng một hàng */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.review-info p {
+  margin: 5px 0; /* Khoảng cách cho các đoạn văn */
+  color: #333; /* Màu chữ cho các thông tin khác */
+  font-size: 0.9em; /* Kích thước chữ nhỏ hơn cho các thông tin khác */
+}
+
+.status {
+  color: #555; /* Màu chữ cho trạng thái */
+  font-size: 0.85em; /* Kích thước chữ nhỏ hơn cho trạng thái */
+}
+
+/* phan info */
+/* Đặt kiểu cho phần profile-section */
+.profile-section {
+  background-color: #f9f9f9; /* Màu nền sáng */
+  padding: 20px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc cho phần */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+/* Đặt kiểu cho container */
+.container {
+  max-width: 800px; /* Chiều rộng tối đa */
+  margin: auto; /* Căn giữa */
+}
+
+/* Đặt kiểu cho thông tin nhà hàng */
+.res-details {
+  display: flex; /* Hiển thị theo hàng ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  border-top: 2px solid #fad02c; /* Đường viền trên */
+  padding-top: 20px; /* Khoảng cách bên trên */
+}
+
+/* Đặt kiểu cho hình ảnh nhà hàng */
+.res-img {
+  width: 150px; /* Chiều rộng */
+  height: 150px; /* Chiều cao */
+  object-fit: cover; /* Cắt ảnh để giữ tỷ lệ */
+  border-radius: 10%; /* Bo góc cho hình ảnh */
+  margin-right: 20px; /* Khoảng cách bên phải */
+}
+
+/* Đặt kiểu cho phần thông tin nhà hàng */
+.res-body {
+  flex: 1; /* Chiếm không gian còn lại */
+  font-size: 1em; /* Kích thước chữ */
+  background: #ffffff; /* Nền trắng */
+  border-radius: 8px; /* Bo góc cho phần thông tin */
+  padding: 15px; /* Khoảng cách bên trong */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho phần */
+}
+
+/* Đặt kiểu cho tiêu đề */
+.res-body h3 {
+  margin: 0 0 10px 0; /* Khoảng cách dưới */
+  font-size: 1.5em; /* Kích thước chữ tiêu đề */
+  color: #333; /* Màu chữ */
+}
+
+/* Đặt kiểu cho đoạn văn */
+.res-body p {
+  margin: 5px 0; /* Khoảng cách trên và dưới */
+  font-size: 0.9em; /* Kích thước chữ cho thông tin khác */
+  line-height: 1.5; /* Khoảng cách dòng */
+}
+
+/* Đặt kiểu cho phần liên kết hành động */
+.action-links {
+  margin-top: 15px; /* Khoảng cách trên */
+}
+
+/* Đặt kiểu cho liên kết */
+.action-links a {
+  text-decoration: none; /* Bỏ gạch dưới */
+  color: #007bff; /* Màu xanh */
+  font-weight: bold; /* In đậm */
+  margin-right: 10px; /* Khoảng cách giữa các liên kết */
+}
+
+.action-links a:hover {
+  text-decoration: underline; /* Gạch dưới khi hover */
+}
+
+/*  */
+/* Đặt kiểu cho tiêu đề tên nhà hàng */
+#nameRestaurant {
+  font-size: 2em; /* Kích thước chữ lớn */
+  font-weight: bold; /* In đậm */
+  color: #333; /* Màu chữ tối */
+  margin-bottom: 15px; /* Khoảng cách dưới */
+  text-align: center; /* Căn giữa */
+  text-transform: capitalize; /* Viết hoa chữ cái đầu */
+  letter-spacing: 1px; /* Khoảng cách giữa các chữ cái */
+}
+
+/* Định dạng thêm cho phần thông tin khác */
+.res-body p {
+  font-size: 1em; /* Kích thước chữ cho thông tin khác */
+  color: #555; /* Màu chữ nhẹ hơn */
+}
+
+.star {
+  font-size: 1.5em; /* Kích thước sao */
+  color: gold; /* Màu vàng cho sao đầy */
+  margin-right: 5px; /* Khoảng cách giữa các sao */
+}
+.star {
+  color: gold; /* Màu vàng cho sao đầy */
+  font-size: 24px; /* Kích thước sao */
+}
+
+.review-item .star {
+  color: gold; /* Màu vàng cho sao trong đánh giá */
+}
+.user {
+  font-weight: bold;
+  margin-right: 2cm;
+}

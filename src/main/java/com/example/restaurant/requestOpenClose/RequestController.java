@@ -63,6 +63,7 @@ public class RequestController {
     public ResponseEntity<CloseViewDto> closeRestaurant(
             @RequestParam String reason
     ) {
+        log.info("loi con");
         CloseViewDto closeViewDto = requestService.closeRestaurant(reason);
         return ResponseEntity.ok(closeViewDto);
     }

@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+td img {
+  width: 50px;
+  height: auto;
+}
+
+/* Thêm viền đen cho toàn bộ bảng */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Giảm khoảng cách giữa các ô */
+  border: 1px solid black; /* Đặt viền cho toàn bộ bảng */
+}
+
+/* Thêm viền cho các ô trong bảng */
+td {
+  border: 1px solid black; /* Đặt viền đen cho các ô trong bảng */
+  padding: 8px; /* Thêm khoảng cách giữa nội dung và viền */
+  text-align: center; /* Canh giữa nội dung trong ô */
+}
+
+/* Tạo một chút kiểu dáng cho các nút */
+button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+button.btn-approve {
+  background-color: #4caf50; /* Màu xanh lá cho nút đồng ý */
+  color: white;
+}
+
+button.btn-reject {
+  background-color: #f44336; /* Màu đỏ cho nút từ chối */
+  color: white;
+}

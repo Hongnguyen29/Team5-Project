@@ -1,0 +1,162 @@
+/* Container bao quanh danh sách nhà hàng */
+.restaurant-container {
+  border: 2px solid #ddd; /* Viền bao quanh toàn bộ container */
+  padding: 20px;
+  border-radius: 10px; /* Bo tròn viền container */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Đặt khung cho các phần tử */
+#restaurantList {
+  list-style-type: none; /* Xóa dấu chấm đầu dòng */
+  padding: 0;
+  margin: 0;
+}
+
+/* Thiết lập cho mỗi item trong danh sách nhà hàng */
+.restaurant-item {
+  display: flex; /* Sử dụng flexbox để sắp xếp các phần tử ngang */
+  justify-content: space-between; /* Giữa thông tin và hình ảnh */
+  background-color: #f9f9f9; /* Màu nền nhẹ */
+  margin: 10px 0; /* Khoảng cách giữa các item */
+  padding: 20px;
+  border-radius: 8px; /* Bo tròn các góc */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng cho các item */
+  align-items: flex-start; /* Đảm bảo thông tin và hình ảnh căn trên cùng */
+}
+
+/* Phần thông tin nhà hàng */
+.restaurant-info {
+  flex: 1; /* Chiếm không gian còn lại */
+  margin-right: 20px; /* Khoảng cách giữa phần thông tin và ảnh */
+}
+
+/* Tiêu đề tên nhà hàng */
+.restaurant-info h3 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Định dạng cho các đoạn văn bản (Owner, Status, Created At, ...) */
+.restaurant-info p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Phần hình ảnh */
+.restaurant-images {
+  display: flex;
+  justify-content: space-between; /* Để các ảnh nằm ngang với nhau */
+  width: 200px; /* Chiều rộng tổng cho các ảnh */
+}
+
+/* Các ảnh trong từng container */
+.image-container {
+  text-align: center; /* Căn giữa mỗi ảnh */
+  width: 50%; /* Mỗi ảnh chiếm 50% chiều rộng của phần hình ảnh */
+}
+
+/* Định dạng cho các ảnh */
+.restaurant-img {
+  width: 100%;
+  height: auto; /* Đảm bảo ảnh không bị méo */
+  object-fit: contain; /* Đảm bảo ảnh vừa vặn trong khung mà không bị cắt */
+  border-radius: 5px; /* Bo tròn ảnh */
+  border: 2px solid #ddd; /* Khung viền nhẹ */
+}
+
+/* Định dạng các tiêu đề cho mỗi ảnh */
+.restaurant-images p {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Thêm hiệu ứng hover khi rê chuột qua mỗi mục */
+.restaurant-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer; /* Thay đổi con trỏ khi rê chuột vào item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng mạnh hơn khi hover */
+}
+
+/* Định dạng container chứa form */
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Giới hạn chiều rộng container */
+}
+
+/* Tiêu đề form */
+.form-container h1 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+/* Định dạng nhóm các trường trong form */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Định dạng các nhãn label */
+.form-group label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Định dạng các trường nhập liệu */
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Định dạng cho textarea */
+.form-group textarea {
+  resize: vertical;
+  height: 100px; /* Chiều cao textarea */
+}
+
+/* Định dạng cho input[type="file"] */
+.form-group input[type="file"] {
+  padding: 0;
+}
+
+/* Định dạng nút submit */
+.form-group button {
+  background-color: #f39c12;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.form-group button:hover {
+  background-color: #e67e22;
+}
+
+/* Thông báo lỗi */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  text-align: center;
+  margin-top: 10px;
+}

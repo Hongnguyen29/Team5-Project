@@ -1,5 +1,6 @@
 package com.example.restaurant.review;
 
+import com.example.restaurant.reservation.ReservationService;
 import com.example.restaurant.review.dto.ReviewDto;
 import com.example.restaurant.review.dto.ReviewViewDto;
 import com.example.restaurant.review.repo.ReviewRepository;
@@ -17,12 +18,12 @@ public class ReviewController {
 
     private final ReviewService reviewService;
 
-
     @PostMapping("/user/reservation/{reservationId}")  //viet review
     public ResponseEntity<ReviewViewDto> create(
             @ModelAttribute ReviewDto dto,
             @PathVariable Long reservationId
             ){
+        log.info("control");
         ReviewViewDto reviewViewDto = reviewService.create(dto,reservationId);
         return ResponseEntity.ok(reviewViewDto);
     }

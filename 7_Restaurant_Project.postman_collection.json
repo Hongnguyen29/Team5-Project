@@ -40,7 +40,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"user4\",\r\n    \"password\":\"123456\",\r\n    \"passwordCheck\":\"123456\",\r\n    \"email\":\"hihi@gmail.com\",\r\n    \"phone\":\"0123456729\"\r\n\r\n}",
+							"raw": "{\r\n    \"username\":\"user11\",\r\n    \"password\":\"123456\",\r\n    \"passwordCheck\":\"123456\",\r\n    \"email\":\"gffdfi@gmail.com\",\r\n    \"phone\":\"0277456729\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,7 +68,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\":\"user3\",\r\n    \"password\": \"123456\"\r\n  \r\n}",
+							"raw": "{\r\n    \"username\":\"user6\",\r\n    \"password\": \"123456\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -125,7 +125,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI4MzY0MzAwLCJleHAiOjE3MjgzNzE1MDB9.NP6-F1G1ufvBgrryLfBZDtcBj04MI4ueV4bfUKBbfF0lR7c564jcet-1ISgwwuVE",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDYzMjQ2NSwiZXhwIjoxNzMwNjM5NjY1fQ.COLdS5e4EfdsW7nObhr5HUBd8qtbxk8XnD2pMmu20H2gJe_kRRPkFd2CuRwGdCJp",
 									"type": "string"
 								}
 							]
@@ -155,7 +155,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzI4MzY2OTg3LCJleHAiOjE3MjgzNzQxODd9.s_5tNtcPxQ96rss4wxa1M1AdCQEf_jTlQTBnoyLz-G8WJo-uW7MDwCETCqOmZN0M",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDYyNzI5NywiZXhwIjoxNzMwNjM0NDk3fQ.7lAFqCNFN3DMwHjdea7mbO3KZbfDN5o6q4tX2uasVOE5iTB4HPDYdSAql49Pz6nx",
 									"type": "string"
 								}
 							]
@@ -164,7 +164,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"hihi@gmail.com\",\r\n    \"phone\":\"01326767333\"\r\n}",
+							"raw": "{\r\n    \"email\":\"user3.@gmail.com\",\r\n    \"phone\":\"01326hsdhd\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -194,7 +194,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyODU2NzI0OCwiZXhwIjoxNzI4NTc0NDQ4fQ.rfyDv76YBUz79tNzIBSgWxRmTasUDftqzk1ecQYItjknj680GUFZHHeTGbYMtuEG",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMTEiLCJpYXQiOjE3MzA2ODUxNDQsImV4cCI6MTczMDY5MjM0NH0.iKwbIHm8Y4F9aVb-W15_IFp12pmv5TM7DFCuV8_xICJwQTy1aT3Y-kqjN9Jz7b97",
 									"type": "string"
 								}
 							]
@@ -207,7 +207,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "postman-cloud:///1ef733d0-6745-4020-a94a-7966b2f00983"
+									"src": "/C:/Users/hongn/OneDrive/Máy tính/anh avatar/화면 캡처 2024-09-18 215230.png"
 								}
 							]
 						},
@@ -264,6 +264,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Admin_viewAllUsers-GET/admin/users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMDg5NjA2OSwiZXhwIjoxNzMwOTAzMjY5fQ.p3opxLJfDb4Hj39yp_HPz_kk2ciqn01WYLJjDHs1rGXkJ2wkmIPFGAPd2Nq1x_wN",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -278,7 +308,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyNCIsImlhdCI6MTcyODY1MTA3OSwiZXhwIjoxNzI4NjU4Mjc5fQ.M0i5m65DJXB4FXdBdurW88-OflbE23JBme-T6uX4_dSv2CJoxSbsU42eDLULqM4e",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMTEiLCJpYXQiOjE3MzA2ODMzNjQsImV4cCI6MTczMDY5MDU2NH0.yT0-HxPikNg1G8MnOu0o8DD78fptxjGq-Awif784jMyOJxnAgtP0bHgUymlhYtR_",
 									"type": "string"
 								}
 							]
@@ -343,7 +373,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODY1MTA5OSwiZXhwIjoxNzI4NjU4Mjk5fQ.Slzr2LYvzKCwjPJsFTxlpo_Pu28Og8YYh-ukn2G5sQj8cfcJ0b9BTTrwhFYblBXq",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMDg3MDU2MiwiZXhwIjoxNzMwODc3NzYyfQ.jKaI-4P3p8XJYf7gW3drfGnwdbPw2DGqzx5fVu60WDbRevIWh1gfcUOTdQyIOu-a",
 									"type": "string"
 								}
 							]
@@ -418,7 +448,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODYzMDIwMCwiZXhwIjoxNzI4NjM3NDAwfQ.wafOdQ3WzCuBZBVGmQtZbXq0kZGZo9j5xOxa1T4bArlQEOYc0T6yA9BwElhYcgBl",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMDg3Nzk3NiwiZXhwIjoxNzMwODg1MTc2fQ.TROOsC80iMXAWJysVMQn376S_IYLFoQClIYv1JCyBfsZCvQy4aHzd4jHo9CwoxCb",
 									"type": "string"
 								}
 							]
@@ -459,7 +489,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODQ4MjMzNSwiZXhwIjoxNzI4NDg5NTM1fQ.Xfx_dQLBIHNC4s63zzL7aMdKR9DNHpn-ZRxMihY50XPLFLoFsmf4Rx0zGVl5FGrc",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMDg4MjEyNCwiZXhwIjoxNzMwODg5MzI0fQ.Nad5S5GdLhgf7R7yA7IPNEs-L5Fel7tc9tak5PKtk1Zf2oqw2pP3kHJthN16-3AA",
 									"type": "string"
 								}
 							]
@@ -490,7 +520,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODY1MTIyMCwiZXhwIjoxNzI4NjU4NDIwfQ.8iSFzcRotoX-HAde_Uj58jHHQl3NlaBZVaMfhwoRmuGidcYGnWSHtnecgdo3TGkF",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJob25nIiwiaWF0IjoxNzMwODYwODIwLCJleHAiOjE3MzA4NjgwMjB9.W3PTgYNYxG-5fzG_cuk3eLqbiCDjcKxSBtrPHWxcwC7HgIkLCP4zXUE4u31AnONw",
 									"type": "string"
 								}
 							]
@@ -502,7 +532,7 @@
 							"formdata": [
 								{
 									"key": "reason",
-									"value": "nônno",
+									"value": "viet nam",
 									"type": "text"
 								}
 							]
@@ -593,7 +623,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODYyODgwNywiZXhwIjoxNzI4NjM2MDA3fQ.sGuDKYwhCRf6r3y8WHxmVsaSyG4jVs8Ml1uEvgGkCIfnmeWWPpzOhwIdRuxYTVHw",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDgxMDgyNywiZXhwIjoxNzMwODE4MDI3fQ.VYWKpFhtehGxTWb9-b5THffrqWMR8i79yrIcof63RtwB7yvMx8b_vpArwd7j78fx",
 									"type": "string"
 								}
 							]
@@ -627,7 +657,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODYyOTM5NiwiZXhwIjoxNzI4NjM2NTk2fQ.6zx-BcPLT9-etx3RwehKKKGuf7Ej-n-wiLp2-8nEzCH48mPUknryT_AwYihz7UMp",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczMDg4MjEyNCwiZXhwIjoxNzMwODg5MzI0fQ.Nad5S5GdLhgf7R7yA7IPNEs-L5Fel7tc9tak5PKtk1Zf2oqw2pP3kHJthN16-3AA",
 									"type": "string"
 								}
 							]
@@ -640,7 +670,8 @@
 								{
 									"key": "status",
 									"value": "ACCEPTED",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								}
 							]
 						},
@@ -673,7 +704,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODY1NDQ3MiwiZXhwIjoxNzI4NjYxNjcyfQ.8wPZ8_hMYU8v6CPbLbNbRZpjgM44JmspJcUumfq_tRrCQnaoMEfeJi68kRgQn6nH",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyNiIsImlhdCI6MTczMDg3MzA4NSwiZXhwIjoxNzMwODgwMjg1fQ.vxuXIM087fha6FwDvAlaXurldkWYG6pbnX8qpuR7QhP1DTRqjOqImdkgmke8T9Hc",
 									"type": "string"
 								}
 							]
@@ -682,7 +713,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"address\": \"123 Main St, Anytown, USA\",\r\n    \"phone\": \"123-456-7890\",\r\n    \"description\": \"A cozy place for family dining.\",\r\n    \"category\": \"PIZZA\",\r\n    \"openTime\": \"10:00\",\r\n    \"closeTime\": \"22:00\"\r\n}",
+							"raw": "{\r\n    \"address\": \"123 Main St, Anytown, USA\",\r\n    \"phone\": \"123-450\",\r\n    \"description\": \"A cozy place for family dining.\",\r\n    \"category\": \"PIZZA\",\r\n    \"openTime\": \"05:00\",\r\n    \"closeTime\": \"12:00\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -712,7 +743,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODY1NDQ3MiwiZXhwIjoxNzI4NjYxNjcyfQ.8wPZ8_hMYU8v6CPbLbNbRZpjgM44JmspJcUumfq_tRrCQnaoMEfeJi68kRgQn6nH",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDY5MDIzMSwiZXhwIjoxNzMwNjk3NDMxfQ.7AHlTJh3hSwjR6VwXQ9A7PfQvbVLlOSstCgI61gSKP_76viRUJNQ_YmHeDxv8WvS",
 									"type": "string"
 								}
 							]
@@ -755,7 +786,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODY1MjA1NSwiZXhwIjoxNzI4NjU5MjU1fQ.WLsQMDcEQ1jwArnJBsrrHR9S4hniu93Tkt-NsvTgsgqHTi9Mcy2Y3x9JV8fHHHOE",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyNCIsImlhdCI6MTcyODc0MjIyOCwiZXhwIjoxNzI4NzQ5NDI4fQ.cENji97p75gN-1FaK5d1JEbejQqalu_d0cMSgymkmG9zGMtDb-c5tegscaKiFWKW",
 									"type": "string"
 								}
 							]
@@ -768,16 +799,18 @@
 								{
 									"key": "category",
 									"value": "",
-									"type": "text"
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "address",
-									"value": "",
-									"type": "text"
+									"value": "ghjj",
+									"type": "text",
+									"disabled": true
 								},
 								{
 									"key": "name",
-									"value": "nabi",
+									"value": "",
 									"type": "text",
 									"disabled": true
 								}
@@ -796,17 +829,17 @@
 							"query": [
 								{
 									"key": "name",
-									"value": null,
+									"value": "",
 									"disabled": true
 								},
 								{
 									"key": "address",
-									"value": null,
+									"value": "",
 									"disabled": true
 								},
 								{
 									"key": "category",
-									"value": null,
+									"value": "PIZZA",
 									"disabled": true
 								}
 							]
@@ -822,7 +855,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyODY1MjMxNiwiZXhwIjoxNzI4NjU5NTE2fQ.mz__D19coe0dutOWOS7MGw_kQJR2MruIXic0_1OrtrhPZuKTJNbITdaHfNHxWJGS",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJob25nIiwiaWF0IjoxNzMwODYwODIwLCJleHAiOjE3MzA4NjgwMjB9.W3PTgYNYxG-5fzG_cuk3eLqbiCDjcKxSBtrPHWxcwC7HgIkLCP4zXUE4u31AnONw",
 									"type": "string"
 								}
 							]
@@ -849,7 +882,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/restaurant/",
+							"raw": "http://localhost:8080/restaurant/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -857,7 +890,748 @@
 							"port": "8080",
 							"path": [
 								"restaurant",
-								""
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "AddMenu-POST/rest/menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDY5MDIzMSwiZXhwIjoxNzMwNjk3NDMxfQ.7AHlTJh3hSwjR6VwXQ9A7PfQvbVLlOSstCgI61gSKP_76viRUJNQ_YmHeDxv8WvS",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nameFood",
+									"value": "tomxao",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "332",
+									"type": "text"
+								},
+								{
+									"key": " file",
+									"type": "file",
+									"src": "/C:/Users/hongn/OneDrive/Máy tính/anh avatar/화면 캡처 2024-09-18 215120.png"
+								},
+								{
+									"key": "status",
+									"value": "AVAILABLE",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-PUT/rest/menu/{menuId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyODc1MzM3MywiZXhwIjoxNzI4NzYwNTczfQ.pLQrVfOsKiim3YzNhcKl5Vzc4PRWikVHdy6pdxK9S9u8tow3iTmp8mqUBOjeeKpw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nameFood",
+									"value": "heocon",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/hongn/OneDrive/Máy tính/anh avatar/화면 캡처 2024-09-18 215201.png",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "AVAILABLE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-DEL/rest/menu/{menuId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDg1ODQ4MCwiZXhwIjoxNzMwODY1NjgwfQ.pN6IAxw0KgUg8ohdqmDR43IBv70mKSmXixatanp7oCYKtjc0DDVA1OwE549Ozfql",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rest/menu/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"menu",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadOne-GET/restaurant/menu/{menuId} Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/menu/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PageMenu-GET/restaurant/1/{restId}",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/1/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"1",
+								"1"
+							],
+							"query": [
+								{
+									"key": "page  ",
+									"value": "0",
+									"description": "Trang muốn hiển thị (từ 0 -> )",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"description": "số phần tử trong một trang",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RestMenu-GET/restaurant/{restId}/menu Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/1/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"1",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Create-POST/restaurant/{restId}/reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTczMDc2NjU5MSwiZXhwIjoxNzMwNzczNzkxfQ.xSEizLTxbV_hPugn6gUZCAMDiT01k64ze2XpPudhgYQRHcdI-BTffr0i7ktmTnMa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nameCustom\":\"hai anh\",\r\n    \"date\":\"2024-11-05\",\r\n    \"time\":\"19:00:00\",\r\n    \"peopleNumber\":4,\r\n    \"note\":\"child 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/restaurant/1/reservation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"1",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadOne-GET//auth/reservation/{reservationId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyOTYwMzEwNSwiZXhwIjoxNzI5NjEwMzA1fQ.8R93Pjou3eCZkDGRRXABchlC_Tn8gF2Gie0LPewKHauYOXIrVNoYU4ftwvu3phsj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/auth/reservation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"reservation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUser-GET/user/reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTczMDc5NDA1OCwiZXhwIjoxNzMwODAxMjU4fQ.Mj341EZ5smTQutGwjN-g-X-KZxJHyUAmtqNL4A2aufetaXkXqT6UiP2_B2zzyVdG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/reservation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRest-GET/rest/reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyOTYwMzEwNSwiZXhwIjoxNzI5NjEwMzA1fQ.8R93Pjou3eCZkDGRRXABchlC_Tn8gF2Gie0LPewKHauYOXIrVNoYU4ftwvu3phsj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/rest/reservation?status=ACCEPTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"reservation"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "ACCEPTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancelled-PUT/user/reservation/{reservationId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTcyOTYwMjk2NiwiZXhwIjoxNzI5NjEwMTY2fQ.ID-xSgVfVnffyGuoI74afAbHjdjFE1ARart_fZGxWnV2tMCWxudH7V4gSox8TBoA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/reservation/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"reservation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm-PUT/rest/reservation/{reservationId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDcxMjg4MiwiZXhwIjoxNzMwNzIwMDgyfQ.LKIb1vMW5kC7glfepmW7L5H_yyOMpxQ8k8u4UnZWDRd04AQb0bXkOAmf6-NEA_MP",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"approved\": true\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/reservation/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"reservation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete-PUT/rest/complete/{reservationId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTczMDcxMjg4MiwiZXhwIjoxNzMwNzIwMDgyfQ.LKIb1vMW5kC7glfepmW7L5H_yyOMpxQ8k8u4UnZWDRd04AQb0bXkOAmf6-NEA_MP",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "USED",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/rest/complete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"rest",
+								"complete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "create-POST/user/reservation/{reservationId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTczMDcxNjIwOSwiZXhwIjoxNzMwNzIzNDA5fQ.luLcCSJlABuY9Do1FKzt_VeQ7kbbI7rtzQBia0vxRNi6P_wlo0njSzd1ytb50WJL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "star",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "",
+									"type": "file"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/reservation/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"reservation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-PUT/user/review/{reviewId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTczMDcxODY0NCwiZXhwIjoxNzMwNzI1ODQ0fQ.zqIatTwHJ6qjlSoirAu-bifYdqqLvJFAZwMRE-5vzveHa426SYYn1rEq0r9z_Cld",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "star",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "team5",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef733d0-6745-4020-a94a-7966b2f00983"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-DEL/user/review/{reviewId}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTcyOTgyNTEzOCwiZXhwIjoxNzI5ODMyMzM4fQ.F9M24Ylmz_1yLguDdVvc_tR6VmUmxtQUzKlIVRZMEEIy8yJ3YN4qPwOAOUzqtJb7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "star",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "team5",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/hongn/OneDrive/Máy tính/anh avatar/personaje-dibujos-animados-gato-pegatina_1308-66949.avif"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadOne-GET/review/{reviewId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/review/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"review",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllUser-GET//user/review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTczMDc5Njk1MSwiZXhwIjoxNzMwODA0MTUxfQ.TblakvrfB-bOEkP9GFnt_WRPOAWEPxjTQ-oq8bLq69zhpvWRslycMG6nS7FB2yE3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllRest-GET/restaurant/{restId}/review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Star-GET/restaurant/{restId}/star",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/1/star",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"1",
+								"star"
 							]
 						}
 					},

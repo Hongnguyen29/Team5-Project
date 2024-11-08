@@ -1,0 +1,84 @@
+/* Phần container của trang */
+#content {
+  max-width: 400px; /* Giới hạn chiều rộng của form */
+  margin: 0 auto; /* Căn giữa form */
+  padding: 30px; /* Padding xung quanh form */
+  background-color: #fff; /* Màu nền của form */
+  border-radius: 8px; /* Bo tròn góc */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho form */
+  text-align: center; /* Căn giữa các phần tử trong form */
+}
+
+/* Tiêu đề của form đăng nhập */
+.login-form h1 {
+  font-size: 30px; /* Kích thước chữ tiêu đề */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+}
+
+/* Định dạng cho các input trong form */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%; /* Chiều rộng đầy đủ */
+  padding: 12px; /* Padding bên trong input */
+  margin: 10px 0; /* Khoảng cách giữa các input */
+  border: 1px solid #ccc; /* Viền của input */
+  border-radius: 5px; /* Bo tròn góc */
+  font-size: 14px; /* Kích thước chữ trong input */
+  background-color: #f9f9f9; /* Màu nền của input */
+  transition: border-color 0.3s; /* Hiệu ứng thay đổi màu viền khi focus */
+}
+
+/* Hiệu ứng khi focus vào các input */
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+  border-color: #fad02c; /* Màu viền khi focus */
+  outline: none; /* Loại bỏ outline mặc định */
+}
+
+/* Định dạng cho nút đăng nhập */
+.login-btn {
+  width: 100%; /* Để nút rộng bằng chiều rộng của form */
+  padding: 12px; /* Padding của nút */
+  background-color: #fad02c; /* Màu nền nút */
+  color: white; /* Màu chữ trên nút */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px; /* Kích thước chữ trong nút */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng khi hover trên nút */
+.login-btn:hover {
+  background-color: #e0c117; /* Màu nền khi hover */
+}
+
+/* Liên kết tới trang đăng ký */
+.login-form p {
+  margin-top: 15px;
+  font-size: 14px; /* Kích thước chữ của liên kết */
+  color: #555;
+}
+
+.login-form a {
+  color: #fad02c;
+  text-decoration: none;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+/* Các phần tử responsive cho các màn hình nhỏ */
+@media (max-width: 600px) {
+  #content {
+    padding: 20px; /* Giảm padding cho màn hình nhỏ */
+    width: 90%; /* Đảm bảo form chiếm 90% chiều rộng màn hình */
+  }
+
+  .login-form h1 {
+    font-size: 28px; /* Giảm kích thước chữ tiêu đề */
+  }
+}

@@ -83,7 +83,8 @@ public class WebSecurityConfig {
                             "/admin/open/confirm/{openId}",
                             "/admin/opens/ReadAll",
                             "/admin/close/confirm/{closeId}",
-                            "/admin/close/ReadAll"
+                            "/admin/close/ReadAll",
+                            "/admin/users"
                     ).hasRole("ADMIN");
 
 

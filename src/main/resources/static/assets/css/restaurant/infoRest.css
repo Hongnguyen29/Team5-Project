@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.res-details {
+  display: flex;
+  align-items: flex-start;
+  border-top: 2px solid #fad02c;
+  padding-top: 20px;
+}
+
+.res-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-right: 20px;
+  transition: transform 0.3s;
+}
+
+.res-img:hover {
+  transform: scale(1.05);
+}
+
+.res-body {
+  flex: 1;
+  font-size: 0.95em; /* Kích thước chữ nhỏ hơn một chút */
+  background: #f9f9f9; /* Nền sáng cho phần thông tin */
+  border-radius: 8px; /* Bo góc cho phần thông tin */
+  padding: 15px; /* Thêm khoảng cách bên trong */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng cho phần thông tin */
+  transition: background 0.3s; /* Hiệu ứng khi hover */
+}
+
+.res-body:hover {
+  background: #f0f0f0; /* Thay đổi màu nền khi hover */
+}
+
+.res-body h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.6em; /* Kích thước chữ tiêu đề nhỏ hơn */
+  color: #333;
+  text-transform: uppercase; /* Viết hoa tiêu đề */
+}
+
+.res-body p {
+  margin: 5px 0;
+  font-size: 1em; /* Kích thước chữ cho thông tin nhỏ hơn */
+  line-height: 1.5; /* Tăng khoảng cách dòng */
+}
+
+.res-body strong {
+  color: #007bff; /* Màu xanh cho các tiêu đề mạnh */
+}
+
+@media (max-width: 600px) {
+  .res-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .res-img {
+    margin: 0 0 20px 0;
+  }
+}
+
+hr {
+  border: 0;
+  height: 2px; /* Độ dày đường kẻ */
+  background: #ddd; /* Màu cho đường kẻ ngang */
+  margin: 20px 0; /* Khoảng cách trên và dưới đường kẻ */
+}
+
+h2 {
+  font-size: 2em; /* Kích thước font cho tiêu đề MENU */
+  color: #333; /* Màu chữ */
+  margin-top: 20px; /* Khoảng cách trên cho tiêu đề MENU */
+  text-align: center; /* Căn giữa tiêu đề MENU */
+}
+
+#list-menu {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các mục menu xuống dòng */
+  gap: 20px; /* Khoảng cách giữa các mục */
+  justify-content: center; /* Căn giữa các mục */
+  margin-top: 20px; /* Khoảng cách trên để phân biệt với tiêu đề MENU */
+  margin-bottom: 40px; /* Khoảng cách dưới cho danh sách menu (khoảng 2cm) */
+}
+
+.menu-item {
+  display: flex;
+  border: 1px solid #ccc; /* Đường viền quanh mỗi mục */
+  border-radius: 8px; /* Bo góc cho viền */
+  overflow: hidden; /* Ẩn các phần thừa ra ngoài */
+  width: calc(50% - 10px); /* Mỗi mục chiếm 50% chiều rộng trừ khoảng cách */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho mục */
+  background: #ffffff; /* Màu nền cho mỗi mục */
+  transition: transform 0.3s; /* Hiệu ứng khi hover */
+}
+
+.menu-item:hover {
+  transform: translateY(-2px); /* Di chuyển nhẹ lên khi hover */
+}
+
+.menu-image {
+  width: 90px; /* Chiều rộng của hình ảnh */
+  height: auto; /* Chiều cao tự động để giữ tỷ lệ */
+  border-radius: 8px; /* Bo góc cho hình ảnh */
+}
+
+.menu-info {
+  padding: 15px; /* Khoảng cách bên trong cho phần thông tin */
+  display: flex;
+  flex-direction: column; /* Đặt các thông tin theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+}
+
+.menu-info h3 {
+  margin: 0; /* Bỏ margin cho tiêu đề */
+  font-size: 1.5em; /* Kích thước font của tiêu đề lớn hơn và in đậm */
+  color: #007bff; /* Màu xanh cho tiêu đề menu */
+  font-weight: bold; /* In đậm tiêu đề */
+}
+
+.menu-info p {
+  margin: 5px 0; /* Khoảng cách cho các đoạn văn */
+  color: #333; /* Màu chữ cho các thông tin khác */
+  font-size: 0.9em; /* Kích thước chữ nhỏ hơn cho giá và trạng thái */
+}
+
+.menu-info p.price,
+.menu-info p.status {
+  color: #555; /* Màu chữ cho giá và trạng thái */
+  font-size: 0.85em; /* Kích thước chữ nhỏ hơn cho giá và trạng thái */
+}
+.action-links {
+  margin-top: 15px; /* Khoảng cách trên cho khối liên kết */
+}
+
+.action-links a {
+  margin-right: 15px; /* Khoảng cách giữa các liên kết */
+  text-decoration: none; /* Bỏ gạch dưới */
+  color: #007bff; /* Màu xanh cho các liên kết */
+  font-weight: bold; /* In đậm các liên kết */
+}
+
+.action-links a:hover {
+  text-decoration: underline; /* Gạch dưới khi hover */
+}
