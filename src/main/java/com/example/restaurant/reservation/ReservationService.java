@@ -45,13 +45,18 @@ public class ReservationService {
                 LocalDate.parse(dto.getDate().toString()), LocalTime.parse(dto.getTime().toString()));
         RestaurantEntity restaurant = restaurantRepository
                 .findById(restaurantId).orElseThrow();
+        log.info("service1");
+
         UserEntity user = facade.extractUser();
+        log.info("service2");
+
         if(reservationRepository.existsByUserAndTime(
                 user.getId(),time)){
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,
                     "You already have an appointment at this time.");
         }
+        log.info("service3");
 
         ReservationEntity reservation =
                 ReservationEntity.builder()
@@ -64,7 +69,11 @@ public class ReservationService {
                         .user(user)
                         .restaurant(restaurant)
                         .build();
+        log.info("service4");
+
         reservationRepository.save(reservation);
+        log.info("service5");
+
         return ReservationView.fromEntity(reservation);
     }
 
@@ -151,6 +160,7 @@ public class ReservationService {
            }
            reservation.setStatus(ReservationStatus.REJECTED);
            reservation.setReasonForRefusal(dto.getReason());
+           reservation.setProcessedAt(LocalDateTime.now());
         }
         reservationRepository.save(reservation);
         return ReservationView.fromEntity(reservation);

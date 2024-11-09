@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>식당예약시스템</title>
+    <!-- Reset Css -->
+    <link rel="stylesheet" href="../../static/assets/css/reset.css" />
+    <!-- Style Css -->
+    <link
+      rel="stylesheet"
+      href="../../static/assets/css/admin/open_confirm.css"
+    />
+    <!--    link font-->
+    <link rel="stylesheet" href="../../static/assets/css/share.css" />
+    <link rel="stylesheet" href="../../static/assets/css/user/linkuser.css" />
+  </head>
+  <body>
+    <div id="main">
+      <!-- Header -->
+      <header>
+        <div id="header">
+          <div class="logo">
+            <p>Inside Out</p>
+          </div>
+          <ul id="nav">
+            <!-- <li><a href="/view/home">Home</a></li>
+            <li><a href="/view/logout">Log Out</a></li> -->
+          </ul>
+        </div>
+      </header>
+      <!-- Body -->
+      <h2>Restaurant Request List</h2>
+      <label for="statusSelect">Select Status:</label>
+      <!-- Select Status for filtering -->
+      <label for="statusSelect">Select Status:</label>
+      <select id="statusSelect">
+        <option value="">--Select Status--</option>
+        <!-- Empty option for no filtering -->
+        <option value="PENDING">PENDING</option>
+        <option value="ACCEPTED">ACCEPTED</option>
+      </select>
+      <button onclick="fetchRequests()">Search</button>
+      <!-- Button to trigger the search -->
+
+      <table id="requestsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Restaurant Name</th>
+            <th>Restaurant Number</th>
+            <th>Owner Name</th>
+            <th>Owner ID Number</th>
+            <th>Reasons closing restaurant</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Processed At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be added here by JavaScript -->
+        </tbody>
+      </table>
+      <ul id="nav-links"></ul>
+      <!-- List link theo role -->
+
+      <div id="footer">
+        <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      </div>
+    </div>
+    <script src="/static/js/admin/close_confirm.js"></script>
+    <script src="/static/js/user/linkuser.js"></script>
+  </body>
+</html>

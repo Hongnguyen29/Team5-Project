@@ -1,0 +1,156 @@
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+#list-menu {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các mục menu xuống dòng */
+  gap: 20px; /* Khoảng cách giữa các mục */
+  justify-content: center; /* Căn giữa các mục */
+  margin-top: 20px; /* Khoảng cách trên để phân biệt với tiêu đề MENU */
+  margin-bottom: 40px; /* Khoảng cách dưới cho danh sách menu (khoảng 2cm) */
+}
+
+/* Menu Item Styling */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9; /* Nền sáng cho các mục menu */
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Góc bo tròn */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
+}
+
+.menu-image {
+  width: 3cm; /* Đặt chiều rộng là 4cm */
+  height: 3cm; /* Đặt chiều cao là 5cm */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo và có thể cắt bớt phần thừa nếu cần */
+  border: 1px solid black; /* Tạo viền đen mỏng cho ảnh */
+  border-radius: 5px; /* Bo tròn góc ảnh */
+  margin-right: 15px; /* Khoảng cách phải của ảnh */
+}
+
+.menu-info {
+  flex: 1;
+}
+
+.menu-info h3 {
+  font-size: 14px;
+  font-weight: bold; /* Chữ đậm cho tên món */
+  color: #1a73e8; /* Màu xanh cho tên món */
+  margin-bottom: 5px;
+}
+
+.menu-info p {
+  font-size: 12px;
+  margin: 5px 0;
+  color: #555; /* Màu chữ nhạt cho thông tin phụ */
+}
+
+.menu-info p strong {
+  color: #333; /* Màu đậm cho các nhãn (ví dụ: Price, Status) */
+}
+
+/* Nút Update và Delete */
+button {
+  background-color: #1a73e8; /* Màu nền xanh dương */
+  color: white;
+  font-size: 12px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Khoảng cách giữa các nút */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển màu và nhấn nút */
+}
+
+button:hover {
+  background-color: #1558b3; /* Màu khi hover (sậm hơn một chút) */
+}
+
+button:active {
+  transform: scale(0.98); /* Hiệu ứng khi nhấn nút */
+}
+
+/* Nút Delete sẽ có màu khác */
+button:last-child {
+  background-color: red; /* Nút Delete màu đỏ */
+}
+
+button:last-child:hover {
+  background-color: red; /* Đỏ đậm khi hover */
+}
+
+/* Responsive: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .menu-item {
+    flex-direction: column; /* Đặt các mục menu theo chiều dọc trên màn hình nhỏ */
+    align-items: flex-start; /* Canh trái các phần tử */
+  }
+
+  .menu-image {
+    width: 80px; /* Giảm kích thước ảnh trên màn hình nhỏ */
+    height: 60px;
+  }
+
+  button {
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng trên màn hình nhỏ */
+    margin-left: 0;
+    margin-top: 10px; /* Thêm khoảng cách giữa các nút */
+  }
+}
+/* Styling for Title and Link */
+#title-menu {
+  font-size: 28px; /* Cỡ chữ lớn cho tiêu đề */
+  font-weight: bold; /* Đậm cho tiêu đề */
+  color: #333; /* Màu chữ xám tối */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+  text-align: center; /* Canh giữa tiêu đề */
+  text-transform: uppercase; /* Chữ hoa cho tiêu đề */
+  letter-spacing: 1px; /* Khoảng cách giữa các chữ */
+}
+
+#link-create {
+  display: inline-block;
+  background-color: #1a73e8; /* Nền màu xanh dương */
+  color: #fff; /* Màu chữ trắng */
+  padding: 12px 25px; /* Khoảng cách bên trong nút */
+  font-size: 16px; /* Cỡ chữ cho nút */
+  border-radius: 5px; /* Góc bo tròn cho nút */
+  text-decoration: none; /* Xóa gạch dưới mặc định của liên kết */
+  font-weight: bold; /* Chữ đậm cho liên kết */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển màu nền và nhấn nút */
+  margin-top: 20px;
+  text-align: center; /* Canh giữa liên kết */
+  display: block; /* Chuyển liên kết thành block để dễ canh giữa */
+  width: max-content; /* Đảm bảo nút có chiều rộng phù hợp với nội dung */
+  margin-left: auto; /* Canh trái */
+  margin-right: auto; /* Canh phải */
+}
+
+#link-create:hover {
+  background-color: #1558b3; /* Màu nền xanh đậm khi hover */
+}
+
+#link-create:active {
+  transform: scale(0.98); /* Hiệu ứng nhấn nút */
+}

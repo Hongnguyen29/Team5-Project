@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>식당예약시스템</title>
+    <link rel="stylesheet" href="../static/assets/css/share.css" />
+    <link rel="stylesheet" href="../static/assets/css/home/home.css" />
+
+    <link
+      rel="stylesheet"
+      href="../static/assets/icons/themify-icons/themify-icons.css"
+    />
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div class="logo"><p>Inside Out</p></div>
+        <!--  phần tạo link theo trạng thái đăng nhập hoặc không -->
+        <ul id="nav"></ul>
+      </div>
+
+      <div id="content">
+        <div class="search-bar">
+          <select id="category-select">
+            <option value="">All Categories</option>
+          </select>
+          <input type="text" id="address-input" placeholder="Enter address" />
+          <input
+            type="text"
+            id="name-input"
+            placeholder="Enter restaurant name"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+        <div class="res-list">
+          <!-- Kết quả tìm kiếm sẽ được hiển thị tại đây -->
+        </div>
+      </div>
+      <div id="footer">
+        <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      </div>
+    </div>
+
+    <script src="../static/js/home/index.js"></script>
+    <script src="../static/js/home/linkhome.js"></script>
+  </body>
+</html>

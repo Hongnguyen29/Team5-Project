@@ -48,14 +48,15 @@ public class RestaurantService {
 
         Specification<RestaurantEntity> spec = (root, query, criteriaBuilder) -> {
             // Kiểm tra nếu tất cả các điều kiện đều rỗng
-            if ((name == null || name.isEmpty()) &&
-                    (address == null || address.isEmpty()) &&
-                    (category == null)) {
-                // Nếu không có điều kiện nào, cho phép hiển thị tất cả các bản ghi
-                return criteriaBuilder.conjunction(); // Hoặc criteriaBuilder.isTrue(), đều cho phép tất cả
-            }
+//            if ((name == null || name.isEmpty()) &&
+//                    (address == null || address.isEmpty()) &&
+//                    (category == null)) {
+//                // Nếu không có điều kiện nào, cho phép hiển thị tất cả các bản ghi
+//                return criteriaBuilder.conjunction(); // Hoặc criteriaBuilder.isTrue(), đều cho phép tất cả
+//            }
 
             Predicate predicate = criteriaBuilder.conjunction(); // Bắt đầu với điều kiện mặc định là TRUE (AND)
+            predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("status"), RestStatus.OPEN));
 
             if (name != null && !name.isEmpty()) {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.like(root.get("nameRestaurant"), "%" + name + "%"));
@@ -67,12 +68,12 @@ public class RestaurantService {
                 predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("category"), category));
             }
 
-            try {
-                UserEntity user = facade.extractUser();
-                if (!(user.getUsername().equals("admin"))) {
-                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("status"), RestStatus.OPEN));
-                }
-            } catch (Exception ignored) {}
+//            try {
+//                UserEntity user = facade.extractUser();
+//                if (!(user.getUsername().equals("admin"))) {
+//                    predicate = criteriaBuilder.and(predicate, criteriaBuilder.equal(root.get("status"), RestStatus.OPEN));
+//                }
+//            } catch (Exception ignored) {}
 
             return predicate;
         };

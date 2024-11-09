@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Reservation System</title>
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="../../static/assets/css/reset.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="../../static/assets/css/share.css" />
+
+    <link
+      rel="stylesheet"
+      href="../../static/assets/css/myRestaurant/myMenu.css"
+    />
+
+    <link rel="stylesheet" href="../../static/assets/css/user/linkuser.css" />
+
+    <!-- Liên kết file CSS -->
+  </head>
+  <body>
+    <div id="main">
+      <!-- Header -->
+      <header>
+        <div id="header">
+          <div class="logo">
+            <p>Inside Out</p>
+          </div>
+          <ul id="nav"></ul>
+        </div>
+      </header>
+      <!-- Body -->
+      <section class="profile-section">
+        <div class="container">
+          <hr />
+
+          <h2 id="title-menu">Menu</h2>
+          <a id="link-create" href="/view/myRestaurant/menu/create"
+            >Create Menu</a
+          >
+
+          <div id="menuContainer"></div>
+        </div>
+      </section>
+      <ul id="nav-links"></ul>
+      <div id="footer">
+        <p>ⓒ Copyright 2024 Inside Out All rights reserved.</p>
+      </div>
+    </div>
+    <script src="/static/js/myRestaurant/myMenu.js"></script>
+    <script src="/static/js/user/linkuser.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+/* Container for reservation items */
+.reservation-item {
+  width: 40%;
+  background-color: #f9f9f9; /* Màu nền sáng */
+  padding: 20px;
+  margin: 10px auto; /* Tự động canh giữa */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
+  font-size: 13px; /* Cỡ chữ 13px */
+  line-height: 1.6; /* Khoảng cách giữa các dòng */
+  color: #333; /* Màu chữ chính */
+}
+
+.reservation-item h4 {
+  font-size: 15px; /* Cỡ chữ tiêu đề */
+  margin-bottom: 10px;
+  color: #1a73e8; /* Màu tiêu đề là màu xanh dương */
+}
+
+.reservation-item p {
+  margin: 5px 0;
+}
+
+.reservation-item strong {
+  font-weight: bold;
+  color: #555; /* Màu chữ nhạt hơn cho nhãn */
+}
+
+/* Action buttons */
+button {
+  background-color: #1a73e8;
+  color: white;
+  font-size: 13px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1558b3; /* Màu khi hover */
+}
+
+button:active {
+  transform: scale(0.98); /* Hiệu ứng khi nhấn */
+}
+
+/* Conditional styling for 'Used' and 'No Show' buttons */
+button:last-child {
+  background-color: #ff6347; /* Màu đỏ cho 'No Show' */
+}
+
+button:last-child:hover {
+  background-color: #e5533c; /* Đỏ đậm khi hover */
+}
+
+button:first-child {
+  background-color: #28a745; /* Màu xanh lá cho 'Used' */
+}
+
+button:first-child:hover {
+  background-color: #218838; /* Xanh lá đậm khi hover */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .reservation-item {
+    width: 90%; /* Mở rộng phần tử ra chiếm 90% bề ngang cho màn hình nhỏ */
+  }
+}

@@ -1,5 +1,6 @@
 package com.example.restaurant.auth;
 
+import com.example.restaurant.review.dto.ReviewViewDto;
 import com.example.restaurant.support.ImageFileUtils;
 import com.example.restaurant.auth.dto.*;
 import com.example.restaurant.auth.entity.UserEntity;
@@ -15,6 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -44,6 +47,7 @@ public class UserService {
         newUser.setPassword(passwordEncoder.encode(dto.getPassword()));
         newUser.setEmail(dto.getEmail());
         newUser.setPhone(dto.getPhone());
+        newUser.setImage("/static/assets/img/user.png");
         newUser.setRole("ROLE_USER");
         userRepository.save(newUser);
        // UserDto.fromEntity(newUser);
@@ -56,6 +60,7 @@ public class UserService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Username and password must not be null.");
         }
         UserDetails userDetails;
+        UserEntity user = userRepository.findByUsername(requestDto.getUsername()).orElseThrow();
         try {
             userDetails = customService.loadUserByUsername(requestDto.getUsername());
         } catch (UsernameNotFoundException ex) {
@@ -68,6 +73,7 @@ public class UserService {
         String jwt = jwtTokenUtils.generateToken(userDetails);
         JwtResponseDto responseDto = new JwtResponseDto();
         responseDto.setToken(jwt);
+        responseDto.setRole(user.getRole());
 
         return responseDto;
     }
@@ -77,16 +83,16 @@ public class UserService {
     }
 
     public UserDto updateInfo(UpdateDto dto){
-
-        if (userRepository.existsByEmail(dto.getEmail())) {
+        UserEntity user = authFacade.extractUser();
+        if (userRepository.existsByEmailAndNotUserId(dto.getEmail(), user.getId() )) {
             System.out.println("check mail");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email already exists");
         }
-        if (userRepository.existsByPhone(dto.getPhone())) {
+        if (userRepository.existsByPhoneAndNotUserId(dto.getPhone(), user.getId() )) {
             System.out.println("check phone");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Phone already exists");
         }
-        UserEntity user = authFacade.extractUser();
+        log.info("loi user");
 
         if(dto.getEmail() != null){
             user.setEmail(dto.getEmail());}
@@ -94,6 +100,7 @@ public class UserService {
             user.setPhone(dto.getPhone());
         }
         userRepository.save(user);
+        log.info("loi service");
         return UserDto.fromEntity(user);
     }
     public UserDto updateImage(MultipartFile file){
@@ -116,6 +123,12 @@ public class UserService {
 
         user.setPassword(passwordEncoder.encode(dto.getPassword()));
          userRepository.save(user);
+    }
+    public List<UserDto> allUsers(){
+        List<UserEntity> users = userRepository.findAll();
+        return users.stream()
+                .map(UserDto::fromEntity)
+                .toList();
     }
 
 
